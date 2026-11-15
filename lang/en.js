@@ -4645,6 +4645,23 @@ window.CHRONIK_SPRACHEN.en = {
     jahr_dauer: "Length",
     jahr_dazu: "Add",
     jahr_ab: "from {d}",
-    jahr_eigene_h: "Every year again, 1 to 14 days – e.g. your own design on your anniversary. Your entries take priority."
+    jahr_eigene_h: "Every year again, 1 to 14 days – e.g. your own design on your anniversary. Your entries take priority.",
+    zs_kicker: "Privacy",
+    zs_titel: "May Kalleta store data on your device?",
+    zs_text: "We always store what is necessary so that sign-in, language and design work. Everything else only with your consent. You can change your choice at any time under “Cookie settings” at the bottom of the page.",
+    zs_immer: "always on",
+    zs_notwendig: "Necessary",
+    zs_notwendig_t: "Sign-in, language, design and this choice. The site does not work without them.",
+    zs_statistik: "Statistics",
+    zs_statistik_t: "Anonymous counters of how Kalleta is used (e.g. visits, device type, features used). No IP address, no profile, nothing shared with third parties.",
+    zs_werbung: "Advertising",
+    zs_werbung_t: "Google AdSense may set cookies and show personalised ads. Data is sent to Google.",
+    zs_nur_notwendig: "Necessary only",
+    zs_alle: "Accept all",
+    zs_auswahl: "Save selection",
+    zs_impressum: "Legal notice",
+    zs_datenschutz: "Privacy policy",
+    zs_einstellungen: "Cookie settings",
+    analyse_oeffnen: "Open analytics"
   }
 };

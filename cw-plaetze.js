@@ -48,6 +48,9 @@
     document.body.appendChild(d);
   }
 
+  /* Neue Wahl im Cookie-Fenster: Werbeplätze neu zeichnen. */
+  window.addEventListener("kalleta-zustimmung", function () { alle.forEach(function (el) { el.zeichnen(); }); });
+
   class ChronikPlatz extends HTMLElement {
     connectedCallback() { alle.push(this); this.setAttribute("data-noprint", ""); this.zeichnen(); }
     disconnectedCallback() { var i = alle.indexOf(this); if (i >= 0) alle.splice(i, 1); }
@@ -72,7 +75,7 @@
       var anbieter = W.anbieter || "eigen";
       if (anbieter === "adsense" && W.adsenseClient && (W.adsensePlaetze || {})[platz]) {
         if (W.zustimmungFragen !== false && zust() !== "ja") {
-          if (!zust()) zustimmungsLeiste();
+          if (!zust()) { if (window.KalletaNutzung) { if (!window.KalletaNutzung.wahl()) window.KalletaNutzung.oeffnen(); } else zustimmungsLeiste(); }
           return this.eigenesZeigen(platz, basis + fest);
         }
         adsenseLaden();

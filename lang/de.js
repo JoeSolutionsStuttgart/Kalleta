@@ -4645,6 +4645,23 @@ window.CHRONIK_SPRACHEN.de = {
     jahr_dauer: "Dauer",
     jahr_dazu: "Hinzufügen",
     jahr_ab: "ab {d}",
-    jahr_eigene_h: "Jedes Jahr wieder, 1 bis 14 Tage – z. B. dein eigenes Design am Hochzeitstag. Eigene Einträge haben Vorrang."
+    jahr_eigene_h: "Jedes Jahr wieder, 1 bis 14 Tage – z. B. dein eigenes Design am Hochzeitstag. Eigene Einträge haben Vorrang.",
+    zs_kicker: "Datenschutz",
+    zs_titel: "Darf Kalleta Daten auf deinem Gerät speichern?",
+    zs_text: "Notwendiges speichern wir immer, damit Anmeldung, Sprache und Design funktionieren. Alles andere nur, wenn du zustimmst. Deine Wahl kannst du jederzeit unten auf der Seite unter „Cookie-Einstellungen“ ändern.",
+    zs_immer: "immer aktiv",
+    zs_notwendig: "Notwendig",
+    zs_notwendig_t: "Anmeldung, Spracheinstellung, Design und diese Entscheidung. Ohne geht die Seite nicht.",
+    zs_statistik: "Statistik",
+    zs_statistik_t: "Anonyme Zähler, wie Kalleta genutzt wird (z. B. Aufrufe, Gerätetyp, genutzte Funktionen). Keine IP-Adresse, kein Profil, keine Weitergabe an Dritte.",
+    zs_werbung: "Werbung",
+    zs_werbung_t: "Google AdSense darf Cookies setzen und personalisierte Anzeigen zeigen. Daten gehen dabei an Google.",
+    zs_nur_notwendig: "Nur notwendige",
+    zs_alle: "Alle akzeptieren",
+    zs_auswahl: "Auswahl speichern",
+    zs_impressum: "Impressum",
+    zs_datenschutz: "Datenschutz",
+    zs_einstellungen: "Cookie-Einstellungen",
+    analyse_oeffnen: "Analyse öffnen"
   }
 };
