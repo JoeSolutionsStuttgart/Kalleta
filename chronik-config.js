@@ -14,8 +14,8 @@ window.CHRONIK_CONFIG = {
 
   
   /* --- 0. Name und Bilder der Anwendung -------------------*/
-  appName: "Loria",
-  appNamePlural: "Loria",
+  appName: "Kalleta",
+  appNamePlural: "Kalleta",
   bilder: {
     wortmarke: "",
     icon192: "icon-192.png",
