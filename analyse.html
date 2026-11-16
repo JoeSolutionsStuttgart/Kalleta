@@ -31,6 +31,15 @@
   .zeile .n { font-variant-numeric: tabular-nums; color: var(--color-neutral-700); min-width: 3ch; text-align: right; }
   .balken { height: 10px; background: var(--color-neutral-200, #e4e2e0); border-radius: 0 4px 4px 0; overflow: hidden; }
   .balken > i { display: block; height: 100%; background: var(--color-accent); border-radius: 0 4px 4px 0; }
+  .meter { margin-bottom: 14px; }
+  .meter .mk { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; margin-bottom: 5px; }
+  .meter .mk span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .mu, .meter .mu { font-size: 12px; color: var(--color-neutral-700); margin-top: 4px; line-height: 1.45; }
+  .warn { color: #8a5a00; font-weight: 600; margin-left: 4px; }
+  .warn.kritisch { color: #b3261e; }
+  .zahlen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 4px 0 14px; }
+  .zahlen b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+  .zahlen span { font-size: 12px; color: var(--color-neutral-700); }
   .leer { font-size: 13.5px; color: var(--color-neutral-700); }
   .hinweis { font-size: 13px; color: var(--color-neutral-700); line-height: 1.5; margin: 6px 0 0; }
   .fehler { padding: 14px 16px; border: 1px solid var(--color-divider); border-left: 4px solid var(--color-accent); margin: 20px 0; line-height: 1.5; }
@@ -48,7 +57,7 @@
 <body>
 <div class="wrap">
   <a href="./" style="font-size: 14px; text-decoration: none;">← <span id="appname">Kalleta</span></a>
-  <div class="kicker" style="margin-top: 16px;">Nur für den Inhaber</div>
+  <div class="kicker" style="margin-top: 16px;">Nur für freigeschaltete Konten</div>
   <h1>Analyse</h1>
   <div id="app"><p class="leer">Lädt …</p></div>
 </div>
@@ -59,7 +68,7 @@
   document.getElementById("appname").textContent = NAME;
   document.title = "Analyse · " + NAME;
   var app = document.getElementById("app");
-  var sb = null, tage = 30, metrik = "aufruf", daten = null;
+  var sb = null, tage = 30, metrik = "aufruf", daten = null, sys = null, sysFehler = "", reiter = "nutzung";
 
   var NAMEN = {
     geraet: { mobil: "Handy", tablet: "Tablet", desktop: "Computer" },
@@ -112,12 +121,15 @@
     var c;
     try { c = await client(); } catch (e) { return fehler("Die Datenbank ist nicht erreichbar. Ist <code>chronik-config.js</code> ausgefüllt?"); }
     var s = await c.auth.getSession();
-    if (!s.data || !s.data.session) return fehler('Bitte zuerst <a href="./">in ' + esc(NAME) + " anmelden</a> – mit dem Inhaber-Konto. Danach diese Seite neu laden.");
+    if (!s.data || !s.data.session) return fehler('Bitte zuerst <a href="./">in ' + esc(NAME) + " anmelden</a> – mit der E-Mail-Adresse, die in Supabase für die Analyse hinterlegt ist. Danach diese Seite neu laden.");
     var bis = new Date(), von = new Date(); von.setDate(von.getDate() - (tage - 1));
-    var r = await c.rpc("nutzung_lesen", { p_von: iso(von), p_bis: iso(bis) });
+    var both = await Promise.all([c.rpc("nutzung_lesen", { p_von: iso(von), p_bis: iso(bis) }), c.rpc("analyse_system")]);
+    var r = both[0], rs = both[1];
+    sys = rs.error ? null : (rs.data || {});
+    sysFehler = rs.error ? String(rs.error.message || "") : "";
     if (r.error) {
       var m = String(r.error.message || "");
-      if (/N-01/.test(m)) return fehler("Diese Seite kann nur das Inhaber-Konto sehen.");
+      if (/N-01/.test(m)) return fehler("Kein Zugang. Diese Seite sehen nur Konten, deren E-Mail-Adresse in Supabase in der Tabelle <strong>analyse_zugang</strong> steht (und bestätigt ist).<br>Angemeldet als: " + esc((s.data.session.user || {}).email || "?"));
       if (/nutzung_lesen|function|schema cache/i.test(m)) return fehler("Die Statistik ist noch nicht eingerichtet: <strong>supabase-update-41.sql</strong> einmal im Supabase-SQL-Editor ausführen.");
       return fehler("Fehler beim Laden: " + esc(m));
     }
@@ -180,13 +192,84 @@
     return { svg: s, werte: werte, max: max, schritt: schritt };
   }
 
+  /* Gratis-Grenzen der Anbieter (Stand November 2026 – können sich ändern). */
+  var FREI = { dbBytes: 500e6, mau: 50000, r2Bytes: 10e9, r2KlasseA: 1e6, r2KlasseB: 10e6, workerProTag: 100000, brevoProTag: 300, supaStorage: 1e9 };
+  function gross(n) { n = Number(n || 0); if (n >= 1e9) return (n / 1e9).toLocaleString("de-DE", { maximumFractionDigits: 2 }) + " GB"; if (n >= 1e6) return (n / 1e6).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " MB"; if (n >= 1e3) return Math.round(n / 1e3) + " KB"; return n + " B"; }
+  function balken(titel, genutzt, grenze, fmt, notiz) {
+    fmt = fmt || zahl;
+    genutzt = Number(genutzt || 0);
+    var html = '<div class="meter"><div class="mk"><span>' + esc(titel) + "</span><span>" + fmt(genutzt) + (grenze ? " von " + fmt(grenze) : "") + "</span></div>";
+    if (grenze) {
+      var pz = Math.min(100, genutzt / grenze * 100), rest = Math.max(0, grenze - genutzt);
+      var warn = pz >= 90 ? '<span class="warn kritisch">⛔ fast erreicht</span>' : pz >= 75 ? '<span class="warn">⚠ wird knapp</span>' : "";
+      html += '<div class="balken"><i style="width:' + Math.max(pz > 0 ? 1 : 0, pz) + '%"></i></div><div class="mu">' + (pz < 1 && genutzt > 0 ? "unter 1" : Math.round(pz)) + " % genutzt · noch " + fmt(rest) + " frei " + warn + "</div>";
+    }
+    if (notiz) html += '<div class="mu">' + notiz + "</div>";
+    return html + "</div>";
+  }
+  function systemHtml() {
+    if (!sys) {
+      var t = /N-01/.test(sysFehler) ? "Kein Zugang zu den Systemzahlen." : "Die Systemzahlen sind noch nicht eingerichtet: <strong>supabase-update-42.sql</strong> einmal im Supabase-SQL-Editor ausführen.";
+      return '<div class="fehler">' + t + (sysFehler && !/N-01|analyse_system|schema cache|function/i.test(sysFehler) ? "<br>" + esc(sysFehler) : "") + "</div>";
+    }
+    var L = CFG.limits || {}, T = sys.tag || {}, M = sys.monat || {}, A = sys.auth || {};
+    var ende = sys.monat_ende ? new Date(sys.monat_ende + "T00:00:00").toLocaleDateString("de-DE", { day: "numeric", month: "long" }) : "";
+    var ref = (String(CFG.url || "").match(/https?:\/\/([a-z0-9]+)\.supabase\.co/) || [])[1] || "";
+    var supaLink = ref ? "https://supabase.com/dashboard/project/" + ref + "/settings/billing/usage" : "https://supabase.com/dashboard";
+    var h = '<div class="leiste"><button class="btn btn-ghost" id="neu">Aktualisieren</button></div>';
+    h += '<div class="raster">';
+    h += '<div class="karte"><h2>Supabase · Datenbank</h2>' +
+      balken("Datenbank-Größe", sys.db_bytes, FREI.dbBytes, gross, "Gratis-Grenze von Supabase: 500 MB.") +
+      balken("Ereignisse", daten && daten.ereignisse, L.dbRows, zahl, "Eigene Grenze aus chronik-config.js (limits.dbRows).") +
+      balken("Datenverkehr diesen Monat", M.bytes_out, L.egressPerMonth, gross, "Eigene Grenze (Supabase gratis: 5 GB). Neuer Monat ab " + esc(ende) + ".") +
+      (sys.supabase_storage && Number(sys.supabase_storage.dateien) > 0 ? balken("Supabase Storage", sys.supabase_storage.bytes, FREI.supaStorage, gross, zahl(sys.supabase_storage.dateien) + " Dateien. Gratis: 1 GB.") : "") +
+      '<div class="mu" style="margin-top:6px;">PostgreSQL ' + esc(String(sys.postgres || "").split(" ")[0]) + ' · <a href="' + supaLink + '" target="_blank" rel="noopener">Supabase-Dashboard öffnen</a></div></div>';
+    h += '<div class="karte"><h2>Supabase · Konten</h2>' +
+      balken("Aktive Konten (30 Tage)", A.aktiv_30, FREI.mau, zahl, "Gratis: 50.000 aktive Nutzer pro Monat.") +
+      '<div class="zahlen"><div><b>' + zahl(A.gesamt) + '</b><span>Konten gesamt</span></div><div><b>' + zahl(A.bestaetigt) + '</b><span>bestätigt</span></div><div><b>' + zahl(A.aktiv_7) + "</b><span>aktiv (7 Tage)</span></div></div>" +
+      '<div class="mu">Bestätigungs- und Passwort-Mails: höchstens ' + zahl(L.emailsPerHour || 3) + " pro Stunde (eigene Grenze für den eingebauten Mailversand von Supabase).</div></div>";
+    h += '<div class="karte"><h2>Supabase · Heute</h2>' +
+      balken("Schreibvorgänge", T.writes, L.writesPerDay) +
+      balken("Ladevorgänge", T.reads, L.readsPerDay) +
+      '<div class="mu">Eigene Tagesgrenzen aus chronik-config.js, damit der Gratis-Tarif sicher reicht. Zurückgesetzt um Mitternacht.</div></div>';
+    h += '<div class="karte"><h2>Cloudflare · R2 (Bilder)</h2>' +
+      balken("Speicher", sys.r2_bytes, L.storageBytes, gross, "Eigene Grenze; Cloudflare gratis: 10 GB.") +
+      balken("Uploads diesen Monat (Klasse A)", M.uploads, FREI.r2KlasseA, zahl, "Heute: " + zahl(T.uploads) + " von " + zahl(L.uploadsPerDay) + " (eigene Tagesgrenze).") +
+      balken("Bildabrufe diesen Monat (Klasse B)", M.gets, FREI.r2KlasseB, zahl, "Heute: " + zahl(T.gets) + " von " + zahl(L.getsPerDay) + " (eigene Tagesgrenze). Datenverkehr aus R2 ist kostenlos.") + "</div>";
+    h += '<div class="karte"><h2>Cloudflare · Worker, KI und Mails</h2>' +
+      balken("Worker-Aufrufe heute (Bildabrufe + Uploads)", Number(T.gets || 0) + Number(T.uploads || 0), FREI.workerProTag, zahl, "Gratis: 100.000 Anfragen pro Tag.") +
+      (sys.ki_heute != null ? balken("KI-Plakat heute (Workers AI)", sys.ki_heute, L.aiPerDay || 0, zahl, "Eigene Grenze; gratis sind 10.000 Neuronen/Tag (≈ 30–60 Bilder).") : "") +
+      balken("Benachrichtigungs-Mails heute (Brevo)", T.emails, FREI.brevoProTag, zahl, "Brevo gratis: 300 Mails pro Tag. Diesen Monat: " + zahl(M.emails) + ".") +
+      '<div class="mu" style="margin-top:6px;"><a href="https://dash.cloudflare.com/" target="_blank" rel="noopener">Cloudflare-Dashboard öffnen</a></div></div>';
+    h += "</div>";
+    var tb = sys.tabellen || [];
+    if (tb.length) {
+      h += '<div class="karte" style="margin-top:14px;"><h2>Größte Tabellen</h2><table><tr><th>Tabelle</th><th style="text-align:right">Zeilen (ca.)</th><th>Größe</th></tr>' +
+        tb.map(function (t) { return "<tr><td>" + esc(t[0]) + "</td><td style=\"text-align:right\">" + zahl(t[2]) + "</td><td>" + gross(t[1]) + "</td></tr>"; }).join("") + "</table></div>";
+    }
+    h += '<p class="hinweis" style="margin-top:16px;">Datenbank-Größe, Tabellen und Konten kommen direkt aus Supabase. Die Werte für Cloudflare, Datenverkehr und Mails zählt ' + esc(NAME) +
+      " selbst mit (Cloudflare gibt diese Zahlen nur mit einem geheimen Schlüssel heraus). Die genauen Werte stehen in den Dashboards. Gratis-Grenzen: Stand November 2026.</p>";
+    return h;
+  }
+  function verdrahten() {
+    app.querySelectorAll("[data-reiter]").forEach(function (b) { b.onclick = function () { reiter = b.getAttribute("data-reiter"); zeigen(); }; });
+    var n = document.getElementById("neu"); if (n) n.onclick = function () { laden(); };
+  }
+
   function zeigen() {
     var a = auswerten(), S = a.summe, d = daten;
     var seg = '<div class="seg" role="group" aria-label="Zeitraum">' + [[7, "7 Tage"], [30, "30 Tage"], [90, "90 Tage"], [365, "1 Jahr"]].map(function (z) {
       return '<button data-tage="' + z[0] + '" aria-pressed="' + (z[0] === tage) + '">' + z[1] + "</button>"; }).join("") + "</div>";
     var kachel = function (z, l, u) { return '<div class="kachel"><div class="z">' + z + '</div><div class="l">' + esc(l) + "</div>" + (u ? '<div class="u">' + esc(u) + "</div>" : "") + "</div>"; };
     var dg = diagramm(a);
-    var html = '<div class="leiste">' + seg + '<button class="btn btn-ghost" id="neu">Aktualisieren</button></div>' +
+    var tabs = '<div class="seg" role="tablist" aria-label="Bereich" style="margin-top:14px;">' + [["nutzung", "Nutzung"], ["system", "Speicher & Grenzen"]].map(function (z) {
+      return '<button role="tab" data-reiter="' + z[0] + '" aria-pressed="' + (z[0] === reiter) + '" aria-selected="' + (z[0] === reiter) + '">' + z[1] + "</button>"; }).join("") + "</div>";
+    if (reiter === "system") {
+      app.innerHTML = tabs + systemHtml();
+      verdrahten();
+      return;
+    }
+    var html = tabs + '<div class="leiste">' + seg + '<button class="btn btn-ghost" id="neu">Aktualisieren</button></div>' +
       '<div class="kacheln">' +
         kachel(zahl(S.aufruf), "Aufrufe") +
         kachel(zahl(S.besucher), "Besucher (pro Tag gezählt)") +
@@ -216,9 +299,9 @@
       '<p class="hinweis" style="margin-top:16px;">Gezählt werden nur Besuche von Menschen, die im Cookie-Fenster der Statistik zugestimmt haben. Konten und Ereignisse sind immer vollständig. ' +
       (S.installiert ? zahl(S.installiert) + " Aufrufe kamen aus der installierten App. " : "") + "</p>";
     app.innerHTML = html;
+    verdrahten();
     app.querySelectorAll("[data-tage]").forEach(function (b) { b.onclick = function () { tage = Number(b.getAttribute("data-tage")); app.innerHTML = '<p class="leer">Lädt …</p>'; laden(); }; });
     app.querySelectorAll("[data-metrik]").forEach(function (b) { b.onclick = function () { metrik = b.getAttribute("data-metrik"); zeigen(); }; });
-    document.getElementById("neu").onclick = function () { laden(); };
     var box = document.getElementById("diagramm"), tip = document.getElementById("tip");
     var titel = METRIKEN.filter(function (m) { return m[0] === metrik; })[0][1];
     box.addEventListener("mousemove", function (ev) {

@@ -1056,6 +1056,10 @@
     if (r.error) throw fbFehler(r);
     return r.data || [];
   }
+  /* Darf dieses Konto die Analyseseite sehen? (supabase-update-42.sql) */
+  async function analyseErlaubt() {
+    try { var c = await client(); var r = await c.rpc("analyse_erlaubt"); return !r.error && r.data === true; } catch (e) { return false; }
+  }
   async function feedbackGesehen() { var c = await client(); await c.rpc("feedback_gesehen"); }
   async function feedbackNachtrag(id, text) {
     var c = await client();
@@ -1101,6 +1105,7 @@
     addComment: addComment, removeComment: removeComment, reactComment: reactComment,
     deleteMe: deleteMe, sweepUnconfirmed: sweepUnconfirmed, deleteImages: deleteImages, setPolls: setPolls, moveComments: moveComments, uploadImage: uploadImage, imageUrl: imageUrl, storeCheck: storeCheck, onChange: onChange,
     snapshot: snapshot, budget: budget, guard: guard,
+    analyseErlaubt: analyseErlaubt,
     feedbackSenden: feedbackSenden, feedbackMeine: feedbackMeine, feedbackGesehen: feedbackGesehen, feedbackNachtrag: feedbackNachtrag,
     isLegacy: function () { return legacySchema; },
     lastR2Error: function () { return lastR2Error; }
