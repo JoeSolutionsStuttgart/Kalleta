@@ -1,6 +1,12 @@
 /* Füllt Impressum und Datenschutzerklärung aus rechtliches.js. */
 (function () {
   var R = window.KALLETA_RECHT || {};
+  /* Noch nicht freigegeben: zur App zurück (Vorschau mit ?vorschau). */
+  if (R.anzeigen !== true) {
+    if (!/[?&]vorschau\b/.test(location.search)) { location.replace("./"); return; }
+    var m = document.createElement("meta"); m.name = "robots"; m.content = "noindex, nofollow"; document.head.appendChild(m);
+    document.querySelectorAll('a[href="impressum.html"], a[href="datenschutz.html"]').forEach(function (l) { l.href = l.getAttribute("href") + "?vorschau"; });
+  }
   var CFG = window.CHRONIK_CONFIG || {};
   var NAME = String(CFG.appName || "Kalleta");
   var W = CFG.werbung || {};

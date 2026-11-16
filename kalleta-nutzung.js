@@ -15,6 +15,8 @@
   if (window.KalletaNutzung) return;
   var CFG = window.CHRONIK_CONFIG || {};
   var W = CFG.werbung || {};
+  /* Impressum/Datenschutz erst verlinken, wenn in rechtliches.js anzeigen: true steht. */
+  var RECHT = (window.KALLETA_RECHT || {}).anzeigen === true;
   var KEY = "kalleta.zustimmung";
   var VERSION = 1;
   var TAGKEY = "kalleta.nutzung.tag";
@@ -73,7 +75,7 @@
         "</div>" +
         '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;">' +
           '<button type="button" data-kz="auswahl" class="btn btn-secondary" style="min-height:42px;">' + esc(t("zs_auswahl", "Auswahl speichern")) + "</button>" +
-          '<span style="font-size:13px;display:flex;gap:14px;"><a href="impressum.html" target="_blank" rel="noopener" style="color:var(--color-accent-700,#005f7c);">' + esc(t("zs_impressum", "Impressum")) + '</a><a href="datenschutz.html" target="_blank" rel="noopener" style="color:var(--color-accent-700,#005f7c);">' + esc(t("zs_datenschutz", "Datenschutz")) + "</a></span>" +
+          (RECHT ? '<span style="font-size:13px;display:flex;gap:14px;"><a href="impressum.html" target="_blank" rel="noopener" style="color:var(--color-accent-700,#005f7c);">' + esc(t("zs_impressum", "Impressum")) + '</a><a href="datenschutz.html" target="_blank" rel="noopener" style="color:var(--color-accent-700,#005f7c);">' + esc(t("zs_datenschutz", "Datenschutz")) + "</a></span>" : "") +
         "</div>" +
       "</div>";
     hg.addEventListener("click", function (ev) {
@@ -112,8 +114,8 @@
     f.id = "kz-fuss"; f.setAttribute("data-noprint", "");
     f.setAttribute("style", "display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;padding:18px 16px calc(18px + env(safe-area-inset-bottom));font-family:var(--font-body,serif);font-size:12.5px;color:var(--color-neutral-700,#5d5a58);");
     var a = "color:inherit;text-decoration:underline;text-underline-offset:2px;";
-    f.innerHTML = '<a href="impressum.html" style="' + a + '">' + esc(t("zs_impressum", "Impressum")) + "</a>" +
-      '<a href="datenschutz.html" style="' + a + '">' + esc(t("zs_datenschutz", "Datenschutz")) + "</a>" +
+    f.innerHTML = (RECHT ? '<a href="impressum.html" style="' + a + '">' + esc(t("zs_impressum", "Impressum")) + "</a>" +
+      '<a href="datenschutz.html" style="' + a + '">' + esc(t("zs_datenschutz", "Datenschutz")) + "</a>" : "") +
       '<button type="button" style="' + a + 'font:inherit;background:none;border:0;padding:0;cursor:pointer;">' + esc(t("zs_einstellungen", "Cookie-Einstellungen")) + "</button>";
     f.querySelector("button").addEventListener("click", oeffnen);
     document.body.appendChild(f);

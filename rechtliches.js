@@ -4,6 +4,12 @@
    „[bitte ausfüllen]“. Hier stehen KEINE geheimen Schlüssel.
    ============================================================ */
 window.KALLETA_RECHT = {
+  /* Impressum und Datenschutzerklärung anzeigen?
+     false = keine Links in der App, die Seiten leiten zur App um.
+     Zum Ansehen trotzdem: impressum.html?vorschau bzw. datenschutz.html?vorschau
+     true  = Links im Cookie-Fenster und unten auf jeder Seite. */
+  anzeigen: false,
+
   /* --- Wer betreibt die Seite? (§ 5 DDG) --- */
   name: "",                 // Vor- und Nachname bzw. Firmenname
   zusatz: "",               // optional, z. B. "Joe Solutions" oder Rechtsform
