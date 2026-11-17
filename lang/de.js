@@ -3385,7 +3385,7 @@ window.CHRONIK_SPRACHEN.de = {
     der_link_gilt_noch_etwa: "Der Link gilt noch etwa",
     minute: "Minute.",
     minuten: "Minuten.",
-    willkommen_zurueck_deine_chronik_wartet: "Willkommen zurück — deine Kalleta wartet.",
+    willkommen_zurueck_deine_chronik_wartet: "Schön, dass du wieder da bist.",
     ohne_datenbank_kann_diese_chronik_keine: "Ohne Datenbank kann diese Kalleta keine E-Mail verschicken — hier lässt sich das Passwort nicht zurücksetzen.",
     dein_erstes_konto_in_dieser_chronik: "Dein erstes Konto in dieser Kalleta. Alles, was du anlegst, ist zuerst privat.",
     ohne_datenbank_bleibt_dieses_konto_nur: "Ohne Datenbank bleibt dieses Konto nur in diesem Browser — und ein vergessenes Passwort lässt sich hier nicht zurücksetzen.",

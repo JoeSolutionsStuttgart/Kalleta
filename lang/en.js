@@ -3385,7 +3385,7 @@ window.CHRONIK_SPRACHEN.en = {
     der_link_gilt_noch_etwa: "The link is valid for about",
     minute: "more minute.",
     minuten: "more minutes.",
-    willkommen_zurueck_deine_chronik_wartet: "Welcome back — your Kalleta is waiting.",
+    willkommen_zurueck_deine_chronik_wartet: "Good to have you back.",
     ohne_datenbank_kann_diese_chronik_keine: "Without a database this Kalleta can't send email — the password can't be reset here.",
     dein_erstes_konto_in_dieser_chronik: "Your first account in this Kalleta. Everything you create is private at first.",
     ohne_datenbank_bleibt_dieses_konto_nur: "Without a database this account stays in this browser only — and a forgotten password can't be reset here.",
