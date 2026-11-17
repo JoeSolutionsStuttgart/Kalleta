@@ -4662,6 +4662,10 @@ window.CHRONIK_SPRACHEN.en = {
     zs_impressum: "Legal notice",
     zs_datenschutz: "Privacy policy",
     zs_einstellungen: "Cookie settings",
-    analyse_oeffnen: "Open analytics"
+    analyse_oeffnen: "Open analytics",
+    gp_weg_gast: "Delete guest “{n}”? Their response and plus-ones will be removed. Guestbook entries, photos and comments stay.",
+    gp_weg_begl: "Remove plus-one “{n}” from the event? {v}'s response stays.",
+    gp_weg_gast_t: "Delete guest “{n}”",
+    gp_weg_begl_t: "Remove plus-one “{n}”"
   }
 };

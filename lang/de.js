@@ -4662,6 +4662,10 @@ window.CHRONIK_SPRACHEN.de = {
     zs_impressum: "Impressum",
     zs_datenschutz: "Datenschutz",
     zs_einstellungen: "Cookie-Einstellungen",
-    analyse_oeffnen: "Analyse öffnen"
+    analyse_oeffnen: "Analyse öffnen",
+    gp_weg_gast: "„{n}“ als Gast löschen? Die Rückmeldung und die Begleitungen werden entfernt. Gästebuch-Einträge, Fotos und Kommentare bleiben.",
+    gp_weg_begl: "Begleitung „{n}“ aus dem Ereignis entfernen? Die Rückmeldung von {v} bleibt.",
+    gp_weg_gast_t: "Gast „{n}“ löschen",
+    gp_weg_begl_t: "Begleitung „{n}“ entfernen"
   }
 };
