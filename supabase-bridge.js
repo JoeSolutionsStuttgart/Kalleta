@@ -10,6 +10,16 @@
      Wiederherstellungs-Link beim Start weg, danach wäre er nicht mehr erkennbar. */
   var START_HASH = String(location.hash || "");
   var RECOVERY = /type=recovery/.test(START_HASH);
+  /* Links aus den Mails können direkt auf die eigene Domain zeigen
+     (…/?token_hash=…&type=…): dann prüft die App den Code selbst bei Supabase,
+     und in der Mail steht nur die eigene Adresse. */
+  var LINK_HASH = "", LINK_TYP = "", LINK_FEHLER = "";
+  try {
+    var q0 = new URLSearchParams(location.search || "");
+    LINK_HASH = q0.get("token_hash") || "";
+    LINK_TYP = q0.get("type") || "";
+    if (LINK_HASH && LINK_TYP === "recovery") RECOVERY = true;
+  } catch (e) { /* alte Browser */ }
   var SDK = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
   var BUCKET = "bilder";
 
@@ -63,14 +73,36 @@
     return loading;
   }
 
+  var sbBereit = null;
   async function client() {
     if (!enabled) throw fail(configFault || "V-01");
-    if (sb) return sb;
-    await loadSdk();
-    sb = window.supabase.createClient(url, rawKey, {
-      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
-    });
-    return sb;
+    if (sb && !sbBereit) return sb;
+    if (sbBereit) return sbBereit;
+    sbBereit = (async function () {
+      await loadSdk();
+      var c = window.supabase.createClient(url, rawKey, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      });
+      if (LINK_HASH) {
+        var th = LINK_HASH; LINK_HASH = "";
+        /* Nur einmal pro Seite prüfen (die Laufzeit kann dieses Skript erneut ausführen) –
+           ein zweiter Versuch würde am schon benutzten Code scheitern. */
+        var G = window.__kalletaLink = window.__kalletaLink || {};
+        if (!G[th]) G[th] = c.auth.verifyOtp({ token_hash: th, type: LINK_TYP || "email" }).then(function (r) { return !(r && r.error); }, function () { return false; });
+        var ok = await G[th];
+        if (!ok) { LINK_FEHLER = "A-21"; window.__kalletaLinkFehler = LINK_TYP || "email"; if (LINK_TYP === "recovery") RECOVERY = false; }
+        /* Code aus der Adresszeile nehmen, damit er nicht in Verlauf oder Lesezeichen landet. */
+        try {
+          var q1 = new URLSearchParams(location.search || "");
+          ["token_hash", "type", "next"].forEach(function (k) { q1.delete(k); });
+          var rest = q1.toString();
+          window.history.replaceState(null, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+        } catch (e) { /* egal */ }
+      }
+      sb = c;
+      return c;
+    })();
+    try { return await sbBereit; } catch (e) { sbBereit = null; throw e; } finally { if (sb) sbBereit = null; }
   }
 
   function fail(c, cause) {
@@ -1108,6 +1140,8 @@
     analyseErlaubt: analyseErlaubt,
     feedbackSenden: feedbackSenden, feedbackMeine: feedbackMeine, feedbackGesehen: feedbackGesehen, feedbackNachtrag: feedbackNachtrag,
     isLegacy: function () { return legacySchema; },
+    /* "" = kein Fehler, sonst die Art des Links ("signup", "recovery", …). */
+    linkFehler: function () { return LINK_FEHLER ? (window.__kalletaLinkFehler || "email") : (window.__kalletaLinkFehler || ""); },
     lastR2Error: function () { return lastR2Error; }
   };
 })();
