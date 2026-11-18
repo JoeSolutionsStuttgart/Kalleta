@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="chronik-config.js?v=b173"></script>
-<script src="lang/de.js?v=b173"></script>
-<script src="lang/en.js?v=b173"></script>
-<script src="lang/sprache.js?v=b173"></script>
-<script src="./support.js?v=b173"></script>
+<script src="chronik-config.js?v=b174"></script>
+<script src="lang/de.js?v=b174"></script>
+<script src="lang/en.js?v=b174"></script>
+<script src="lang/sprache.js?v=b174"></script>
+<script src="./support.js?v=b174"></script>
 </head>
 <body>
 <x-dc>
@@ -20,15 +20,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kalleta">
 <link rel="stylesheet" href="broadsheet.css">
-<script src="supabase-bridge.js?v=b173"></script>
-<script src="xlsx-export.js?v=b173"></script>
-<script src="farbe.js?v=b173"></script>
-<script src="cw-plaetze.js?v=b173"></script>
-<script src="fb-knopf.js?v=b173"></script>
-<script src="rechtliches.js?v=b173"></script>
-<script src="kalleta-nutzung.js?v=b173"></script>
+<script src="supabase-bridge.js?v=b174"></script>
+<script src="xlsx-export.js?v=b174"></script>
+<script src="farbe.js?v=b174"></script>
+<script src="cw-plaetze.js?v=b174"></script>
+<script src="fb-knopf.js?v=b174"></script>
+<script src="rechtliches.js?v=b174"></script>
+<script src="kalleta-nutzung.js?v=b174"></script>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
-<link rel="stylesheet" href="fonts/fonts.css?v=b173">
+<link rel="stylesheet" href="fonts/fonts.css?v=b174">
 <style>
 :root { --color-on-accent: #141210; --color-on-accent-2: #ffffff; --color-on-text: #f3f2f2; }
 .btn-primary, .btn-primary:hover, .btn-primary:active { color: var(--color-on-accent); }
@@ -634,7 +634,7 @@
     <sc-if value="{{ lay.loginKlein }}" hint-placeholder-val="{{ false }}">
     <div data-bewegt="" style="order: 0; min-width: 0; position: relative; z-index: 1;">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b173" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b174" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -647,7 +647,7 @@
     <div data-bewegt="" style="{{ lay.loginPitch }}">
       <sc-if value="{{ lay.loginGross }}" hint-placeholder-val="{{ true }}">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b173" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b174" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -2699,10 +2699,10 @@
   <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
     <div style="position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: var(--space-4); background: color-mix(in srgb, var(--color-text) 32%, transparent);" data-screen-label="Ereignis bearbeiten">
       <div style="{{ lay.dialog }}">
-        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4);">
-          <div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-2) var(--space-4); flex-wrap: wrap;">
+          <div style="flex: 1 1 260px; min-width: 0;">
             <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ form.mode }}</div>
-            <h2 style="margin: 3px 0 0; font-size: 29px; line-height: 1.05;">{{ L.ereignis }}</h2>
+            <h2 style="margin: 3px 0 0; font-size: 29px; line-height: 1.1; overflow-wrap: break-word;">{{ ed.kopfName }}</h2>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <button class="btn btn-secondary" style="white-space: nowrap;" onClick="{{ closeEditor }}">{{ L.abbrechen }}</button>
@@ -2727,20 +2727,32 @@
             </div>
           </sc-if>
         </div>
+        <div style="{{ ed.rahmen }}">
         <div role="tablist" aria-label="{{ L.ed_tabs }}" style="{{ ed.leiste }}">
-          <sc-for list="{{ ed.tabs }}" as="et" hint-placeholder-count="5">
-            <button role="tab" aria-selected="{{ et.aria }}" onClick="{{ et.klick }}" style="{{ et.stil }}"><span aria-hidden="true" style="font-size: 17px; line-height: 1;">{{ et.g }}</span><span>{{ et.label }}</span><sc-if value="{{ et.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ et.badgeStil }}">{{ et.badge }}</span></sc-if></button>
+          <sc-for list="{{ ed.tabs }}" as="et" hint-placeholder-count="6">
+            <button role="tab" aria-selected="{{ et.aria }}" onClick="{{ et.klick }}" style="{{ et.stil }}">
+              <span aria-hidden="true" style="{{ et.icoStil }}">{{ et.g }}</span>
+              <span style="display: grid; gap: 1px; min-width: 0; text-align: left;">
+                <span style="display: flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 700; line-height: 1.2;">{{ et.label }}<sc-if value="{{ et.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ et.badgeStil }}">{{ et.badge }}</span></sc-if></span>
+                <sc-if value="{{ et.zeigKurz }}" hint-placeholder-val="{{ true }}"><span style="font-size: 12px; line-height: 1.35; font-weight: 400; color: var(--color-neutral-700);">{{ et.kurz }}</span></sc-if>
+              </span>
+            </button>
           </sc-for>
         </div>
-        <div style="margin: var(--space-3) 0 var(--space-2); display: grid; gap: 4px;">
-          <div style="font-family: var(--font-heading); font-size: 21px; font-weight: 600;">{{ ed.titel }}</div>
-          <div style="font-size: 13px; line-height: 1.5; color: var(--color-neutral-700);">{{ ed.intro }}</div>
+        <div style="min-width: 0; display: grid; align-content: start;">
+        <div style="{{ ed.kopf }}">
+          <span aria-hidden="true" style="{{ ed.kopfIco }}">{{ ed.kopfG }}</span>
+          <div style="display: grid; gap: 3px; min-width: 0;">
+            <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 700; line-height: 1.15;">{{ ed.titel }}</div>
+            <div style="font-size: 13.5px; line-height: 1.5; color: var(--color-neutral-700);">{{ ed.intro }}</div>
+          </div>
         </div>
         <sc-if value="{{ ed.hatSub }}" hint-placeholder-val="{{ false }}">
-          <nav role="tablist" aria-label="{{ ed.titel }}" style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: var(--space-3);">
-            <sc-for list="{{ ed.subTabs }}" as="sb" hint-placeholder-count="4"><button role="tab" aria-selected="{{ sb.aria }}" onClick="{{ sb.klick }}" style="{{ sb.stil }}">{{ sb.label }}<sc-if value="{{ sb.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ sb.badgeStil }}">{{ sb.badge }}</span></sc-if></button></sc-for>
+          <nav role="tablist" aria-label="{{ ed.titel }}" style="{{ ed.subRaster }}">
+            <sc-for list="{{ ed.subTabs }}" as="sb" hint-placeholder-count="4"><button role="tab" aria-selected="{{ sb.aria }}" onClick="{{ sb.klick }}" style="{{ sb.stil }}"><span style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 14.5px; font-weight: 700;">{{ sb.label }}<sc-if value="{{ sb.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ sb.badgeStil }}">{{ sb.badge }}</span></sc-if></span><span style="font-size: 12px; line-height: 1.35; font-weight: 400; color: var(--color-neutral-700);">{{ sb.kurz }}</span></button></sc-for>
           </nav>
         </sc-if>
+        <div style="{{ ed.panel }}">
         <sc-if value="{{ ed.grund }}" hint-placeholder-val="{{ false }}">
           <div data-edtab="grund" style="display: grid; gap: 0;">
         <div style="{{ lay.rowDate }}">
@@ -3212,8 +3224,8 @@
         </sc-if>
         <sc-if value="{{ ed.gast }}" hint-placeholder-val="{{ false }}">
           <div data-edtab="gast" style="display: grid; gap: var(--space-3);">
-          <nav data-sec="vorort" role="tablist" aria-label="{{ L.ed_t_gast }}" style="display: flex; gap: 6px; flex-wrap: wrap;">
-            <sc-for list="{{ ed.gaTabs }}" as="gt2" hint-placeholder-count="7"><button role="tab" aria-selected="{{ gt2.aria }}" onClick="{{ gt2.klick }}" style="{{ gt2.stil }}">{{ gt2.label }}<sc-if value="{{ gt2.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ gt2.badgeStil }}">{{ gt2.badge }}</span></sc-if></button></sc-for>
+          <nav data-sec="vorort" role="tablist" aria-label="{{ L.ed_t_gast }}" style="{{ ed.gaRaster }}">
+            <sc-for list="{{ ed.gaTabs }}" as="gt2" hint-placeholder-count="7"><button role="tab" aria-selected="{{ gt2.aria }}" onClick="{{ gt2.klick }}" style="{{ gt2.stil }}"><span style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 14.5px; font-weight: 700;">{{ gt2.label }}<sc-if value="{{ gt2.hatBadge }}" hint-placeholder-val="{{ false }}"><span style="{{ gt2.badgeStil }}">{{ gt2.badge }}</span></sc-if></span><span style="font-size: 12px; line-height: 1.35; font-weight: 400; color: var(--color-neutral-700);">{{ gt2.kurz }}</span></button></sc-for>
           </nav>
           <sc-if value="{{ ed.ga.link }}" hint-placeholder-val="{{ false }}">
             <section data-gatab="link" style="display: grid; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-surface);">
@@ -3969,6 +3981,9 @@
             <sc-if value="{{ ed.hatNaechster }}" hint-placeholder-val="{{ true }}"><button class="btn btn-secondary" onClick="{{ ed.weiter }}">{{ ed.weiterLabel }} ›</button></sc-if>
           </div>
         </sc-if>
+        </div>
+        </div>
+        </div>
         <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: var(--space-6);">
           <button class="btn btn-secondary" style="white-space: nowrap;" onClick="{{ closeEditor }}">{{ L.abbrechen }}</button>
           <button class="btn btn-primary" style="white-space: nowrap;" onClick="{{ saveEvent }}">{{ L.ereignis_speichern }}</button>
@@ -9528,6 +9543,10 @@ class Component extends DCLogic {
     const mine = !d.by || !me || d.by === me.id;
     const o = (this.exOf(d).offen) || {};
     const zahl = (n) => (n > 0 ? String(n) : "");
+    /* Jeder Bereich hat eine eigene Farbe – so erkennt man sofort, wo man ist. */
+    const FARBE = { grund: "#2d6fe0", inhalt: "#0f9488", programm: "#d97706", gast: "#c026d3", aussehen: "#7c3aed", freigabe: "#64748b" };
+    const vw0 = st.vw || window.innerWidth || 1280;
+    const breit = vw0 >= 980;
     const liste = [
       ["grund", "✎", "ed_t_grund", ""],
       ["inhalt", "☰", "ed_t_inhalt", zahl((d.infos || []).filter((x) => x && (String(x.label || "").trim() || String(x.value || "").trim())).length + (d.people || []).length + (d.images || []).length)],
@@ -9538,17 +9557,43 @@ class Component extends DCLogic {
     const akt = liste.some((x) => x[0] === st.edTab) ? st.edTab : "grund";
     const nr = liste.findIndex((x) => x[0] === akt);
     const nachOben = () => window.setTimeout(() => { const dlg = document.querySelector('[data-screen-label="Ereignis bearbeiten"] > div'); if (dlg) dlg.scrollTop = 0; }, 30);
-    const geh = (k) => () => { this.setState({ edTab: k }); nachOben(); };
+    const geh = (k) => () => { this.setState({ edTab: k }); nachOben();
+      /* Schmale Bildschirme: den gewählten Bereich in der Kachelreihe sichtbar machen. */
+      window.setTimeout(() => { const b = document.querySelector('[data-screen-label="Ereignis bearbeiten"] [role="tablist"] [aria-selected="true"]'); if (b && b.parentNode && b.parentNode.scrollWidth > b.parentNode.clientWidth) b.parentNode.scrollTo({ left: Math.max(0, b.offsetLeft - 20), behavior: "smooth" }); }, 60); };
+    const hue = FARBE[akt] || "var(--color-accent)";
+    const tint = (h, pz) => "color-mix(in srgb, " + h + " " + pz + "%, var(--color-bg))";
+    const pad = vw0 < 760 ? "var(--space-4)" : "var(--space-6)";
     const out = {
-      /* Klebt am oberen Rand des Dialogs – der Innenabstand wird überdeckt, damit nichts darüber durchscheint. */
-      leiste: (function () { const pad = (st.vw || window.innerWidth || 1280) < 760 ? "var(--space-4)" : "var(--space-6)";
-        return { position: "sticky", top: "calc(-1 * " + pad + ")", zIndex: 6, display: "flex", flexWrap: "wrap", gap: "6px", margin: "0 calc(-1 * " + pad + ")", padding: "calc(" + pad + " + 4px) " + pad + " 10px", background: "var(--color-bg)", borderBottom: "1px solid var(--color-divider)" }; })(),
+      kopfName: String(d.name || "").trim() || tx("ereignis"),
+      /* Breit: links die Bereiche als Leiste, rechts der Arbeitsbereich. Schmal: Bereiche als Kachelreihe oben. */
+      rahmen: breit ? { display: "grid", gridTemplateColumns: "250px minmax(0, 1fr)", gap: "24px", alignItems: "start", marginTop: "var(--space-3)" }
+        : { display: "grid", gap: "var(--space-3)", marginTop: "var(--space-2)" },
+      leiste: breit ? { position: "sticky", top: "0", zIndex: 6, display: "grid", gap: "8px", alignSelf: "start", padding: "10px", borderRadius: "16px",
+          background: "color-mix(in srgb, var(--color-text) 4%, var(--color-bg))", border: "1px solid var(--color-divider)" }
+        : { position: "sticky", top: "calc(-1 * " + pad + ")", zIndex: 6, display: "flex", gap: "8px", overflowX: "auto", margin: "0 calc(-1 * " + pad + ")", padding: "10px " + pad,
+          background: "var(--color-bg)", borderBottom: "1px solid var(--color-divider)", scrollbarWidth: "thin" },
+      kopf: { display: "flex", gap: "14px", alignItems: "center", padding: "16px 18px", borderRadius: "16px 16px 0 0", borderStyle: "solid", borderWidth: "1px 1px 0", borderColor: tint(hue, 35),
+        background: "linear-gradient(135deg, " + tint(hue, 18) + ", " + tint(hue, 6) + ")" },
+      kopfIco: { width: "44px", height: "44px", flex: "0 0 44px", display: "grid", placeItems: "center", borderRadius: "12px", fontSize: "21px", background: hue, color: "#ffffff",
+        boxShadow: "0 6px 14px -6px " + hue },
+      kopfG: liste[nr][1],
+      subRaster: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(" + (vw0 < 520 ? "128px" : "170px") + ", 1fr))", gap: "8px", padding: "4px 14px 14px",
+        borderStyle: "solid", borderWidth: "0 1px", borderColor: tint(hue, 35), background: tint(hue, 6) },
+      gaRaster: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(" + (vw0 < 520 ? "128px" : "170px") + ", 1fr))", gap: "8px", padding: "12px", borderRadius: "14px", background: tint(hue, 7) },
+      /* Der Arbeitsbereich: Karte mit farbigem Rand und Schatten, klar vom Rest getrennt. */
+      panel: { display: "grid", gap: "0", padding: vw0 < 760 ? "14px" : "24px", borderRadius: "0 0 16px 16px", borderStyle: "solid", borderWidth: "3px 1px 1px",
+        borderColor: hue + " " + tint(hue, 35) + " " + tint(hue, 35), background: "var(--color-bg)", boxShadow: "0 10px 28px -18px rgba(0, 0, 0, 0.35)" },
       tabs: liste.map((x) => {
         const an = x[0] === akt;
-        return { key: x[0], g: x[1], label: tx(x[2]), aria: an ? "true" : "false", klick: geh(x[0]), hatBadge: !!x[3], badge: x[3],
-          stil: { display: "inline-flex", alignItems: "center", gap: "7px", minHeight: "42px", padding: "0 14px", borderRadius: "999px", cursor: "pointer", font: "inherit", fontSize: "14px", fontWeight: an ? 700 : 500,
-            border: an ? "2px solid var(--color-accent)" : "1px solid var(--color-divider)", background: an ? "var(--color-accent)" : "var(--color-surface)", color: an ? "var(--color-on-accent)" : "var(--color-text)" },
-          badgeStil: { fontSize: "11px", fontWeight: 700, padding: "1px 7px", borderRadius: "99px", background: an ? "rgba(255,255,255,0.3)" : "var(--color-accent-100)", color: an ? "inherit" : "var(--color-accent-700)" } };
+        const h = FARBE[x[0]] || "var(--color-accent)";
+        return { key: x[0], g: x[1], label: tx(x[2]), kurz: tx(x[2] + "_k"), zeigKurz: breit, aria: an ? "true" : "false", klick: geh(x[0]), hatBadge: !!x[3], badge: x[3],
+          stil: { display: "flex", alignItems: "center", gap: "11px", minHeight: breit ? "62px" : "50px", padding: breit ? "9px 11px" : "6px 12px 6px 7px", flex: breit ? "initial" : "0 0 auto",
+            borderRadius: "12px", cursor: "pointer", font: "inherit", textAlign: "left", color: "var(--color-text)",
+            borderStyle: "solid", borderWidth: an ? "2px 2px 2px 6px" : "1px", borderColor: an ? h : "var(--color-divider)",
+            background: an ? tint(h, 14) : "var(--color-bg)", boxShadow: an ? "0 8px 18px -12px " + h : "0 1px 2px rgba(0, 0, 0, 0.05)" },
+          icoStil: { width: "36px", height: "36px", flex: "0 0 36px", display: "grid", placeItems: "center", borderRadius: "10px", fontSize: "17px", lineHeight: 1,
+            background: an ? h : tint(h, 16), color: an ? "#ffffff" : h },
+          badgeStil: { fontSize: "11px", fontWeight: 700, padding: "1px 7px", borderRadius: "99px", background: tint(h, 22), color: "var(--color-text)" } };
       }),
       titel: tx(liste[nr][2]), intro: tx("ed_i_" + akt),
       hatWeiter: true, hatZurueck: nr > 0, hatNaechster: nr < liste.length - 1,
@@ -9557,6 +9602,11 @@ class Component extends DCLogic {
       weiterLabel: nr < liste.length - 1 ? tx(liste[nr + 1][2]) : tx("speichern"),
     };
     liste.forEach((x) => { out[x[0]] = x[0] === akt; });
+    /* Unterbereiche als Karten: Name, kurze Erklärung, Zahl. Gewählt = farbig hinterlegt mit Schatten. */
+    const karte = (an) => ({ display: "grid", gap: "3px", alignContent: "start", textAlign: "left", padding: "10px 12px", minHeight: "64px", borderRadius: "12px", cursor: "pointer",
+      font: "inherit", color: "var(--color-text)", border: an ? "2px solid " + hue : "1px solid var(--color-divider)", background: an ? tint(hue, 13) : "var(--color-bg)",
+      boxShadow: an ? "0 8px 18px -12px " + hue : "0 1px 3px rgba(0, 0, 0, 0.07)" });
+    const kBadge = { fontSize: "11px", fontWeight: 700, padding: "1px 7px", borderRadius: "99px", background: tint(hue, 24), color: "var(--color-text)" };
     /* Gästeseite: Unterreiter, immer nur ein Bereich sichtbar. */
     const ex = this.exOf(d), lage = ex.lage || {}, nf = ex.notfall || {};
     const teileAn = ["foto", "buch", "vor", "sitz", "zp", "rsvp"].filter((k) => !!o[k]).length;
@@ -9574,21 +9624,18 @@ class Component extends DCLogic {
     gaListe.forEach((x) => { out.ga[x[0]] = x[0] === gaAkt; });
     out.gaTabs = gaListe.map((x) => {
       const an = x[0] === gaAkt;
-      return { key: x[0], label: tx(x[1]), aria: an ? "true" : "false", hatBadge: !!x[2], badge: x[2],
+      return { key: x[0], label: tx(x[1]), kurz: tx(x[1] + "_k"), aria: an ? "true" : "false", hatBadge: !!x[2], badge: x[2],
         klick: () => this.setState({ gaTab: x[0] }),
-        /* Unterreiter deutlich: gewählt = kräftig gefüllt, sonst Karte mit Rand und leichtem Schatten. */
-        stil: { display: "inline-flex", alignItems: "center", gap: "7px", minHeight: "42px", padding: "0 15px", borderRadius: "12px", cursor: "pointer", font: "inherit", fontSize: "14.5px", fontWeight: an ? 700 : 600,
-          border: an ? "2px solid var(--color-accent)" : "1.5px solid color-mix(in srgb, var(--color-text) 22%, transparent)", background: an ? "var(--color-accent)" : "var(--color-bg)",
-          color: an ? "var(--color-on-accent, #ffffff)" : "var(--color-text)", boxShadow: an ? "0 6px 14px -8px color-mix(in srgb, var(--color-accent) 80%, transparent)" : "0 1px 2px rgba(0, 0, 0, 0.06)" },
-        badgeStil: { fontSize: "11px", fontWeight: 700, padding: "1px 7px", borderRadius: "99px", background: an ? "rgba(255, 255, 255, 0.25)" : "var(--color-accent-100)", color: an ? "var(--color-on-accent, #ffffff)" : "var(--color-accent-700)" } };
+        stil: karte(an),
+        badgeStil: kBadge };
     });
     out.immer = true;
     /* Reiter mit mehreren Themen bekommen Unterreiter; Reiter mit einem Thema zeigen alles direkt. */
     const subDef = {
-      inhalt: [["infos", tx("infos"), zahl((d.infos || []).filter((x) => x && (String(x.label || "").trim() || String(x.value || "").trim())).length)],
-        ["personen", tx("personen"), zahl((d.people || []).length)], ["bilder", tx("bilder"), zahl((d.images || []).length)], ["alben", tx("alben"), zahl((d.alben || []).length)]],
-      programm: [["timetable", tx("pg_titel"), zahl(((d.timetable || {}).acts || []).length)], ["etappen", tx("etappen_route"), zahl((d.etappen || []).length)],
-        ["polls", tx("ed_s_polls"), zahl((d.polls || []).length)], ["finanzen", tx("fin_titel"), this.finAn(ex) ? tx("fin_an") : tx("fin_aus")]]
+      inhalt: [["infos", tx("es_infos"), zahl((d.infos || []).filter((x) => x && (String(x.label || "").trim() || String(x.value || "").trim())).length), tx("es_infos_k")],
+        ["personen", tx("es_personen"), zahl((d.people || []).length), tx("es_personen_k")], ["bilder", tx("es_bilder"), zahl((d.images || []).length), tx("es_bilder_k")], ["alben", tx("es_alben"), zahl((d.alben || []).length), tx("es_alben_k")]],
+      programm: [["timetable", tx("es_timetable"), zahl(((d.timetable || {}).acts || []).length), tx("es_timetable_k")], ["etappen", tx("es_etappen"), zahl((d.etappen || []).length), tx("es_etappen_k")],
+        ["polls", tx("es_polls"), zahl((d.polls || []).length), tx("es_polls_k")], ["finanzen", tx("es_finanzen"), this.finAn(ex) ? tx("fin_an") : tx("fin_aus"), tx("es_finanzen_k")]]
     };
     const subListe = subDef[akt] || [];
     const subWahl = (st.edSub || {})[akt];
@@ -9598,13 +9645,10 @@ class Component extends DCLogic {
     ["infos", "personen", "bilder", "alben", "timetable", "etappen", "polls", "finanzen"].forEach((k) => { out.sub[k] = k === subAkt; });
     out.subTabs = subListe.map((x) => {
       const an = x[0] === subAkt;
-      return { key: x[0], label: x[1], aria: an ? "true" : "false", hatBadge: !!x[2], badge: x[2],
+      return { key: x[0], label: x[1], kurz: x[3] || "", aria: an ? "true" : "false", hatBadge: !!x[2], badge: x[2],
         klick: () => this.setState((s0) => ({ edSub: Object.assign({}, s0.edSub, { [akt]: x[0] }) })),
-        /* Unterreiter deutlich: gewählt = kräftig gefüllt, sonst Karte mit Rand und leichtem Schatten. */
-        stil: { display: "inline-flex", alignItems: "center", gap: "7px", minHeight: "42px", padding: "0 15px", borderRadius: "12px", cursor: "pointer", font: "inherit", fontSize: "14.5px", fontWeight: an ? 700 : 600,
-          border: an ? "2px solid var(--color-accent)" : "1.5px solid color-mix(in srgb, var(--color-text) 22%, transparent)", background: an ? "var(--color-accent)" : "var(--color-bg)",
-          color: an ? "var(--color-on-accent, #ffffff)" : "var(--color-text)", boxShadow: an ? "0 6px 14px -8px color-mix(in srgb, var(--color-accent) 80%, transparent)" : "0 1px 2px rgba(0, 0, 0, 0.06)" },
-        badgeStil: { fontSize: "11px", fontWeight: 700, padding: "1px 7px", borderRadius: "99px", background: an ? "rgba(255, 255, 255, 0.25)" : "var(--color-accent-100)", color: an ? "var(--color-on-accent, #ffffff)" : "var(--color-accent-700)" } };
+        stil: karte(an),
+        badgeStil: kBadge };
     });
     out.finStil = this.voPill(this.finAn(ex));
     out.finLabel = (this.finAn(ex) ? "✓ " : "") + tx("ed_fin_zeigen");
@@ -19474,7 +19518,7 @@ class Component extends DCLogic {
         marginRight: (st.lehr != null && vw >= 1120) ? "352px" : "0",
         alignSelf: (st.lehr != null && vw < 1120) ? "start" : "center",
         marginBottom: (st.lehr != null && vw < 1120) ? "calc(46vh + var(--space-4))" : "0",
-        width: phone ? "100%" : "min(680px, 100%)",
+        width: phone ? "100%" : vw >= 980 ? "min(1120px, 100%)" : "min(720px, 100%)",
         maxHeight: (st.lehr != null && vw < 1120)
           ? "calc(92vh - 46vh - var(--space-4))"
           : (phone ? "94vh" : "92vh"),
