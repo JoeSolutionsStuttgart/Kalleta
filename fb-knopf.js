@@ -159,8 +159,9 @@
     knopf = document.createElement("button");
     knopf.type = "button";
     knopf.setAttribute("aria-label", t("fb_knopf"));
-    knopf.setAttribute("style", "position:fixed;right:0;top:42%;z-index:55;display:flex;align-items:center;gap:6px;padding:12px 8px;min-width:36px;border:0;border-radius:var(--radius-md) 0 0 var(--radius-md);background:var(--color-text);color:var(--color-bg);font:inherit;font-family:var(--font-body);font-size:13px;letter-spacing:.12em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);cursor:pointer;box-shadow:var(--shadow-md);opacity:.88;");
-    knopf.innerHTML = '<i class="ph-duotone ph-chat-circle-text" style="font-size:18px;transform:rotate(90deg);"></i><span>' + esc(t("fb_knopf")) + "</span>";
+    knopf.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" style="flex:0 0 auto;"><path d="M12 3.5c-4.8 0-8.5 3.3-8.5 7.6 0 2.2 1 4.1 2.6 5.5-.2 1.3-.8 2.6-1.8 3.6 1.9-.1 3.6-.8 4.9-1.9 0.9.3 1.8.4 2.8.4 4.8 0 8.5-3.3 8.5-7.6S16.8 3.5 12 3.5z" fill="currentColor" opacity=".22"/><path d="M12 3.5c-4.8 0-8.5 3.3-8.5 7.6 0 2.2 1 4.1 2.6 5.5-.2 1.3-.8 2.6-1.8 3.6 1.9-.1 3.6-.8 4.9-1.9 0.9.3 1.8.4 2.8.4 4.8 0 8.5-3.3 8.5-7.6S16.8 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="8.5" cy="11.2" r="1.1" fill="currentColor"/><circle cx="12" cy="11.2" r="1.1" fill="currentColor"/><circle cx="15.5" cy="11.2" r="1.1" fill="currentColor"/></svg><span data-fb-text="" style="display:block;writing-mode:vertical-rl;transform:rotate(180deg);">' + esc(t("fb_knopf")) + "</span>";
+    form();
+    window.addEventListener("resize", form);
     punkt = document.createElement("span");
     punkt.setAttribute("style", "position:absolute;left:-4px;bottom:-4px;width:12px;height:12px;border-radius:50%;background:var(--color-accent-2);border:2px solid var(--color-bg);display:none;");
     knopf.appendChild(punkt);
@@ -187,6 +188,21 @@
     root.addEventListener("change", function (ev) { if (ev.target.getAttribute("data-fb") === "info") st.info = ev.target.checked; });
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && st.auf) schliessen(); });
     document.body.appendChild(root);
+  }
+  /* Computer: Lasche am rechten Rand, Text senkrecht (in einem inneren Element – Safari dreht
+     Knöpfe selbst nicht zuverlässig). Handy: kleines rundes Symbol unten links, ragt nicht ins Bild. */
+  function form() {
+    if (!knopf) return;
+    var handy = (window.innerWidth || 1280) < 760;
+    var basis = "position:fixed;z-index:55;align-items:center;justify-content:center;border:0;background:var(--color-text);color:var(--color-bg);font:inherit;font-family:var(--font-body);cursor:pointer;opacity:.88;box-shadow:0 6px 18px -8px rgba(0,0,0,.45);";
+    var an = knopf.style.display === "none" ? "none" : "flex";
+    knopf.setAttribute("style", basis + "display:" + an + ";" + (handy
+      ? "left:12px;bottom:calc(14px + env(safe-area-inset-bottom));width:46px;height:46px;padding:0;border-radius:50%;"
+      : "right:0;top:42%;flex-direction:column;gap:8px;padding:12px 8px;min-width:36px;border-radius:var(--radius-md) 0 0 var(--radius-md);font-size:13px;letter-spacing:.12em;text-transform:uppercase;"));
+    var tx0 = knopf.querySelector("[data-fb-text]");
+    if (tx0) tx0.style.display = handy ? "none" : "block";
+    knopf.setAttribute("title", t("fb_knopf"));
+    if (punkt) knopf.appendChild(punkt);
   }
   /* Nicht auf Gästeseiten, nicht in der Fotoshow und ohne Cloud. */
   function sichtbarkeit() {

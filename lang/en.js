@@ -4702,6 +4702,7 @@ window.CHRONIK_SPRACHEN.en = {
     gf_q_pflicht: "Required question",
     gf_q_pflicht_an: "Guests must answer it",
     gf_q_pflicht_aus: "Optional – guests can skip it",
-    gf_freiwillig: "optional"
+    gf_freiwillig: "optional",
+    login_woerter: "Events, Photos, People, Parties, Chro­nicle, Life, Joy, Moments, Trips, Memories, Friends, Family, Stories, Adventures"
   }
 };

@@ -4702,6 +4702,7 @@ window.CHRONIK_SPRACHEN.de = {
     gf_q_pflicht: "Pflichtfrage",
     gf_q_pflicht_an: "Gäste müssen sie beantworten",
     gf_q_pflicht_aus: "Freiwillig – Gäste können sie überspringen",
-    gf_freiwillig: "freiwillig"
+    gf_freiwillig: "freiwillig",
+    login_woerter: "Ereignisse, Bilder, Menschen, Feste, Chro­nik, Leben, Freude, Momente, Reisen, Erinnerungen, Freunde, Familie, Geschichten, Abenteuer"
   }
 };
