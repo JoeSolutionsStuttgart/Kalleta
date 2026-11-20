@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="chronik-config.js?v=b178"></script>
-<script src="lang/de.js?v=b178"></script>
-<script src="lang/en.js?v=b178"></script>
-<script src="lang/sprache.js?v=b178"></script>
-<script src="./support.js?v=b178"></script>
+<script src="chronik-config.js?v=b179"></script>
+<script src="lang/de.js?v=b179"></script>
+<script src="lang/en.js?v=b179"></script>
+<script src="lang/sprache.js?v=b179"></script>
+<script src="./support.js?v=b179"></script>
 </head>
 <body>
 <x-dc>
@@ -20,15 +20,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kalleta">
 <link rel="stylesheet" href="broadsheet.css">
-<script src="supabase-bridge.js?v=b178"></script>
-<script src="xlsx-export.js?v=b178"></script>
-<script src="farbe.js?v=b178"></script>
-<script src="cw-plaetze.js?v=b178"></script>
-<script src="fb-knopf.js?v=b178"></script>
-<script src="rechtliches.js?v=b178"></script>
-<script src="kalleta-nutzung.js?v=b178"></script>
+<script src="supabase-bridge.js?v=b179"></script>
+<script src="xlsx-export.js?v=b179"></script>
+<script src="farbe.js?v=b179"></script>
+<script src="cw-plaetze.js?v=b179"></script>
+<script src="fb-knopf.js?v=b179"></script>
+<script src="rechtliches.js?v=b179"></script>
+<script src="kalleta-nutzung.js?v=b179"></script>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
-<link rel="stylesheet" href="fonts/fonts.css?v=b178">
+<link rel="stylesheet" href="fonts/fonts.css?v=b179">
 <style>
 :root { --color-on-accent: #141210; --color-on-accent-2: #ffffff; --color-on-text: #f3f2f2; }
 .btn-primary, .btn-primary:hover, .btn-primary:active { color: var(--color-on-accent); }
@@ -111,7 +111,7 @@
 
   <sc-if value="{{ gv.an }}" hint-placeholder-val="{{ false }}">
     <div data-screen-label="Gastbereich" style="{{ gv.rootStil }}">
-      <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><div role="group" aria-label="{{ L.sprache }}" style="{{ spr.gastStil }}"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; align-self: center; opacity: 0.7; margin: 0 2px 0 6px;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button onClick="{{ sl.klick }}" aria-pressed="{{ sl.aria }}" title="{{ sl.name }}" style="{{ sl.gastStil }}">{{ sl.kurz }}</button></sc-for></div></sc-if>
+      <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><span data-spr="" style="{{ spr.gast.wrap }}"><button type="button" onClick="{{ spr.gast.um }}" aria-haspopup="true" aria-expanded="{{ spr.gast.aria }}" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="{{ spr.gast.knopf }}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="flex: 0 0 auto; opacity: 0.8;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ spr.aktKurz }}</span><span aria-hidden="true" style="{{ spr.gast.pfeil }}">▾</span></button><sc-if value="{{ spr.gast.auf }}" hint-placeholder-val="{{ false }}"><div role="menu" aria-label="{{ L.sprache }}" style="{{ spr.gast.menue }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button type="button" role="menuitemradio" aria-checked="{{ sl.aria }}" onClick="{{ sl.klick }}" style="{{ sl.gast }}"><span>{{ sl.name }}</span><span style="font-size: 11px; letter-spacing: 0.12em; opacity: 0.65;">{{ sl.kurz }}</span></button></sc-for></div></sc-if></span></sc-if>
       <div aria-hidden="true" style="{{ gv.fxStil }}"></div>
       <div aria-hidden="true" style="{{ gv.ornStil }}"></div>
       {{ gv.feierFx }}
@@ -634,12 +634,12 @@
     {{ loginFx }}
     <sc-if value="{{ lay.loginKlein }}" hint-placeholder-val="{{ false }}">
     <div data-bewegt="" style="order: 0; min-width: 0; position: relative; z-index: 1;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;"><div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div><sc-if value="{{ spr.mehrLogin }}" hint-placeholder-val="{{ false }}"><span role="group" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="display: inline-flex; align-items: baseline; gap: 2px; color: var(--color-accent-700);"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; align-self: center; opacity: 0.75;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button onClick="{{ sl.klick }}" aria-pressed="{{ sl.aria }}" title="{{ sl.name }}" style="{{ sl.loginStil }}">{{ sl.kurz }}</button></sc-for></span></sc-if></div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b178" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;"><div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div><sc-if value="{{ spr.mehrLogin }}" hint-placeholder-val="{{ false }}"><span data-spr="" style="{{ spr.login.wrap }}"><button type="button" onClick="{{ spr.login.um }}" aria-haspopup="true" aria-expanded="{{ spr.login.aria }}" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="{{ spr.login.knopf }}"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; opacity: 0.8;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ spr.aktKurz }}</span><span aria-hidden="true" style="{{ spr.login.pfeil }}">▾</span></button><sc-if value="{{ spr.login.auf }}" hint-placeholder-val="{{ false }}"><div role="menu" aria-label="{{ L.sprache }}" style="{{ spr.login.menue }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button type="button" role="menuitemradio" aria-checked="{{ sl.aria }}" onClick="{{ sl.klick }}" style="{{ sl.login }}"><span>{{ sl.name }}</span><span style="font-size: 11px; letter-spacing: 0.12em; opacity: 0.65;">{{ sl.kurz }}</span></button></sc-for></div></sc-if></span></sc-if></div>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b179" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
-      <div style="display: flex; justify-content: space-between; gap: 4px var(--space-4); flex-wrap: wrap; padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
-        <span role="text" aria-label="{{ L.ereignisse_bilder_menschen }}" style="display: inline-flex; flex-wrap: wrap; gap: 0 0.45em;"><sc-for list="{{ worte }}" as="ww" hint-placeholder-count="3"><span aria-hidden="true" style="{{ ww.stil }}">{{ ww.wort }}</span><sc-if value="{{ ww.sep }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">·</span></sc-if></sc-for></span>
-        <span style="white-space: nowrap;">{{ today }}</span>
+      <div style="{{ lay.loginZeile }}">
+        <span role="text" aria-label="{{ L.ereignisse_bilder_menschen }}" style="{{ lay.loginWorte }}"><sc-for list="{{ worte }}" as="ww" hint-placeholder-count="3"><span aria-hidden="true" style="{{ ww.stil }}">{{ ww.wort }}</span><sc-if value="{{ ww.sep }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">·</span></sc-if></sc-for></span>
+        <span style="{{ lay.loginDatum }}">{{ today }}</span>
       </div>
       <div style="height: 1px; background: var(--color-divider);"></div>
     </div>
@@ -647,12 +647,12 @@
     </sc-if>
     <div data-bewegt="" style="{{ lay.loginPitch }}">
       <sc-if value="{{ lay.loginGross }}" hint-placeholder-val="{{ true }}">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;"><div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div><sc-if value="{{ spr.mehrLogin }}" hint-placeholder-val="{{ false }}"><span role="group" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="display: inline-flex; align-items: baseline; gap: 2px; color: var(--color-accent-700);"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; align-self: center; opacity: 0.75;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button onClick="{{ sl.klick }}" aria-pressed="{{ sl.aria }}" title="{{ sl.name }}" style="{{ sl.loginStil }}">{{ sl.kurz }}</button></sc-for></span></sc-if></div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b178" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;"><div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div><sc-if value="{{ spr.mehrLogin }}" hint-placeholder-val="{{ false }}"><span data-spr="" style="{{ spr.login.wrap }}"><button type="button" onClick="{{ spr.login.um }}" aria-haspopup="true" aria-expanded="{{ spr.login.aria }}" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="{{ spr.login.knopf }}"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; opacity: 0.8;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ spr.aktKurz }}</span><span aria-hidden="true" style="{{ spr.login.pfeil }}">▾</span></button><sc-if value="{{ spr.login.auf }}" hint-placeholder-val="{{ false }}"><div role="menu" aria-label="{{ L.sprache }}" style="{{ spr.login.menue }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button type="button" role="menuitemradio" aria-checked="{{ sl.aria }}" onClick="{{ sl.klick }}" style="{{ sl.login }}"><span>{{ sl.name }}</span><span style="font-size: 11px; letter-spacing: 0.12em; opacity: 0.65;">{{ sl.kurz }}</span></button></sc-for></div></sc-if></span></sc-if></div>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b179" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
-      <div style="display: flex; justify-content: space-between; gap: 4px var(--space-4); flex-wrap: wrap; padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
-        <span role="text" aria-label="{{ L.ereignisse_bilder_menschen }}" style="display: inline-flex; flex-wrap: wrap; gap: 0 0.45em;"><sc-for list="{{ worte }}" as="ww" hint-placeholder-count="3"><span aria-hidden="true" style="{{ ww.stil }}">{{ ww.wort }}</span><sc-if value="{{ ww.sep }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">·</span></sc-if></sc-for></span>
-        <span style="white-space: nowrap;">{{ today }}</span>
+      <div style="{{ lay.loginZeile }}">
+        <span role="text" aria-label="{{ L.ereignisse_bilder_menschen }}" style="{{ lay.loginWorte }}"><sc-for list="{{ worte }}" as="ww" hint-placeholder-count="3"><span aria-hidden="true" style="{{ ww.stil }}">{{ ww.wort }}</span><sc-if value="{{ ww.sep }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true">·</span></sc-if></sc-for></span>
+        <span style="{{ lay.loginDatum }}">{{ today }}</span>
       </div>
       <div style="height: 1px; background: var(--color-divider);"></div>
       </sc-if>
@@ -854,7 +854,7 @@
         <button class="btn btn-secondary" style="min-height: 48px; width: 100%; justify-content: flex-start; white-space: nowrap; text-decoration: none; display: flex; align-items: center;" onClick="{{ nav.kontakte }}">{{ contactsLabel }}</button>
         <button class="btn btn-secondary" style="min-height: 48px; width: 100%; justify-content: flex-start; white-space: nowrap; text-decoration: none; display: flex; align-items: center;" onClick="{{ nav.einst }}">⚙ {{ L.einstellungen }}</button>
         <button class="btn btn-secondary" style="min-height: 48px; width: 100%; justify-content: flex-start; white-space: nowrap; text-decoration: none; display: flex; align-items: center;" onClick="{{ nav.hilfe }}">{{ L.hilfe }}</button>
-        <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><div style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 12px; font-size: 15px;"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: 0 0 auto; align-self: center; opacity: 0.75;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ L.sprache }}</span><div role="group" aria-label="{{ L.sprache }}" style="{{ spr.menuBox }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button onClick="{{ sl.klick }}" aria-pressed="{{ sl.aria }}" title="{{ sl.name }}" style="{{ sl.stil }}">{{ sl.kurz }}</button></sc-for></div></div></sc-if>
+        <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><div style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 12px; font-size: 15px;"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: 0 0 auto; align-self: center; opacity: 0.75;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ L.sprache }}</span><span data-spr="" style="{{ spr.menu.wrap }}"><button type="button" onClick="{{ spr.menu.um }}" aria-haspopup="true" aria-expanded="{{ spr.menu.aria }}" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="{{ spr.menu.knopf }}"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" style="flex: 0 0 auto; opacity: 0.8;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ spr.aktKurz }}</span><span aria-hidden="true" style="{{ spr.menu.pfeil }}">▾</span></button><sc-if value="{{ spr.menu.auf }}" hint-placeholder-val="{{ false }}"><div role="menu" aria-label="{{ L.sprache }}" style="{{ spr.menu.menue }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button type="button" role="menuitemradio" aria-checked="{{ sl.aria }}" onClick="{{ sl.klick }}" style="{{ sl.menu }}"><span>{{ sl.name }}</span><span style="font-size: 11px; letter-spacing: 0.12em; opacity: 0.65;">{{ sl.kurz }}</span></button></sc-for></div></sc-if></span></div></sc-if>
         <button class="btn btn-ghost" style="min-height: 48px; width: 100%; justify-content: flex-start; white-space: nowrap; text-decoration: none; display: flex; align-items: center;" onClick="{{ logout }}">{{ L.abmelden }}</button>
       </nav>
     </sc-if>
@@ -865,7 +865,7 @@
         <span>{{ stats.span }}</span>
         <span>{{ stats.shown }} · {{ stats.people }} {{ L.personen }}</span>
         <span style="display: flex; gap: var(--space-2); align-items: baseline;">
-          <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><span role="group" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="display: inline-flex; align-items: baseline; gap: 2px;"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" style="flex: 0 0 auto; margin-right: 2px; align-self: center; opacity: 0.7;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button onClick="{{ sl.klick }}" aria-pressed="{{ sl.aria }}" title="{{ sl.name }}" style="{{ sl.kopfStil }}">{{ sl.kurz }}</button></sc-for></span></sc-if>
+          <sc-if value="{{ spr.mehr }}" hint-placeholder-val="{{ false }}"><span data-spr="" style="{{ spr.kopf.wrap }}"><button type="button" onClick="{{ spr.kopf.um }}" aria-haspopup="true" aria-expanded="{{ spr.kopf.aria }}" aria-label="{{ L.sprache }}" title="{{ L.sprache }}" style="{{ spr.kopf.knopf }}"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="flex: 0 0 auto; opacity: 0.8;"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g></svg><span>{{ spr.aktKurz }}</span><span aria-hidden="true" style="{{ spr.kopf.pfeil }}">▾</span></button><sc-if value="{{ spr.kopf.auf }}" hint-placeholder-val="{{ false }}"><div role="menu" aria-label="{{ L.sprache }}" style="{{ spr.kopf.menue }}"><sc-for list="{{ spr.liste }}" as="sl" hint-placeholder-count="2"><button type="button" role="menuitemradio" aria-checked="{{ sl.aria }}" onClick="{{ sl.klick }}" style="{{ sl.kopf }}"><span>{{ sl.name }}</span><span style="font-size: 11px; letter-spacing: 0.12em; opacity: 0.65;">{{ sl.kurz }}</span></button></sc-for></div></sc-if></span></sc-if>
           <span style="color: var(--color-accent-700);">{{ me.label }}</span>
           <button onClick="{{ logout }}" style="font: inherit; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; background: none; border: 0; padding: 0; cursor: pointer; color: var(--color-text); text-decoration: underline;">{{ L.abmelden }}</button>
         </span>
@@ -6945,6 +6945,10 @@ class Component extends DCLogic {
     window.addEventListener("hashchange", this.gastStart);
     window.addEventListener("popstate", this.gastStart);
     window.addEventListener("popstate", this.navPop);
+    /* Sprachliste schließen, wenn daneben getippt oder Escape gedrückt wird. */
+    this._sprZu = (ev) => { if (!this.state.sprAuf) return; if (ev.type === "keydown" ? ev.key === "Escape" : !(ev.target && ev.target.closest && ev.target.closest("[data-spr]"))) this.setState({ sprAuf: "" }); };
+    document.addEventListener("pointerdown", this._sprZu, true);
+    document.addEventListener("keydown", this._sprZu, true);
     this.gastStart();
     /* Startseite: alle 2,6 Sekunden wechselt eines der drei Wörter (nicht bei „Bewegung reduzieren“). */
     this._wortUhr = window.setInterval(() => {
@@ -12497,6 +12501,8 @@ class Component extends DCLogic {
     window.removeEventListener("hashchange", this.gastStart);
     window.removeEventListener("popstate", this.gastStart);
     window.removeEventListener("popstate", this.navPop);
+    document.removeEventListener("pointerdown", this._sprZu, true);
+    document.removeEventListener("keydown", this._sprZu, true);
     if (this._wortUhr) window.clearInterval(this._wortUhr);
     if (this._voTimer) window.clearInterval(this._voTimer);
   }
@@ -19589,6 +19595,12 @@ class Component extends DCLogic {
       loginLogo: { height: "0.82em", width: "0.82em", flex: "0 0 auto", alignSelf: "center", marginRight: "0.14em", borderRadius: "0.19em", boxShadow: "0 0.06em 0.16em rgba(16, 40, 80, 0.28)" },
       loginWort: { background: "linear-gradient(100deg, #2d6fe0 0%, #0f9488 50%, #7a3fd0 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent",
         filter: "drop-shadow(0 0.05em 0.07em rgba(60, 40, 140, 0.22))", paddingBottom: "0.06em" },
+      /* Wörter und Datum: fester Aufbau, damit wechselnde Wörter nie einen Zeilensprung auslösen.
+         Breit: Wörter links, Datum rechts. Schmal: Datum immer in eigener Zeile darüber. */
+      loginZeile: { display: "grid", gridTemplateColumns: phone ? "minmax(0, 1fr)" : "minmax(0, 1fr) auto", alignItems: "baseline", gap: phone ? "3px" : "var(--space-4)",
+        padding: "7px 0", fontSize: vw < 360 ? "10.5px" : phone ? "11px" : "11.5px", letterSpacing: vw < 360 ? "0.05em" : phone ? "0.1em" : "0.13em", textTransform: "uppercase" },
+      loginWorte: { display: "flex", flexWrap: "nowrap", gap: "0 0.45em", whiteSpace: "nowrap", overflow: "hidden", minWidth: 0, order: phone ? 2 : 1 },
+      loginDatum: { whiteSpace: "nowrap", order: phone ? 1 : 2, color: phone ? "var(--color-neutral-700)" : "inherit" },
       loginClaim: {
         maxWidth: "26ch", background: "linear-gradient(100deg, #201e1d 0%, #3d2a8a 55%, #0b6f86 100%)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent", fontSize: phone ? "26px" : tablet ? "32px" : "40px",
         lineHeight: 1.1, letterSpacing: "-0.02em", margin: "var(--space-6) 0 0", textWrap: "pretty"
@@ -21046,27 +21058,43 @@ class Component extends DCLogic {
         const S = window.CHRONIK_SPRACHEN || {};
         const ks = Object.keys(S);
         const akt = window.CHRONIK_SPRACHE || "de";
-        const box = { display: "inline-flex", alignItems: "center", overflow: "hidden", zIndex: 2100, color: "var(--color-text)", background: "color-mix(in srgb, var(--color-surface, #fff) 88%, transparent)", border: "1px solid var(--color-divider)", borderRadius: "var(--radius-md, 4px)", boxShadow: "0 4px 16px rgba(0,0,0,0.08)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)" };
-        const wechsel = (k) => { if (k === akt) return; try { window.localStorage.setItem("chronik.sprache", k); } catch (e) { /* ohne Speicher */ } window.location.reload(); };
-        return { mehr: ks.length > 1, mehrLogin: ks.length > 1 && !self0.state.gast, akt: akt, onWahl: (ev) => wechsel(ev.target.value),
-          /* Gästeseite: oben rechts im Inhalt (scrollt mit), in Farben und Schrift der Gästeseite. */
-          gastStil: { position: "absolute", top: "14px", right: "14px", zIndex: 5, display: "inline-flex", alignItems: "center", gap: "2px", padding: "3px", borderRadius: "999px",
-            color: "var(--g-ink)", background: "color-mix(in srgb, var(--g-card, #fff) 82%, transparent)", border: "1px solid color-mix(in srgb, var(--g-ink) 14%, transparent)",
-            boxShadow: "0 4px 14px -8px rgba(0, 0, 0, 0.35)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", fontFamily: "inherit" },
-          /* Handy-Menü: kleine Segmentleiste rechts. */
-          menuBox: Object.assign({}, box, { marginLeft: "auto", boxShadow: "none", background: "var(--color-bg)" }),
-          liste: ks.map((k) => ({ key: k, kurz: k.toUpperCase(), kurz2: k.charAt(0).toUpperCase() + k.slice(1).toLowerCase(), name: (S[k] || {}).name || k, aria: k === akt ? "true" : "false",
-            stil: { minWidth: "40px", minHeight: "34px", padding: "0 11px", border: 0, borderLeft: "1px solid var(--color-divider)", borderRadius: 0, cursor: k === akt ? "default" : "pointer", font: "inherit", fontSize: "12px", fontWeight: k === akt ? 700 : 500, letterSpacing: "0.12em",
-              background: k === akt ? "var(--color-accent)" : "transparent", color: k === akt ? "var(--color-on-accent, var(--color-bg))" : "var(--color-text)" },
-            /* Anmeldeseite: wie die Kopfzeile – kleine Großbuchstaben, die gewählte Sprache betont. */
-            loginStil: { font: "inherit", fontSize: "11px", letterSpacing: "0.16em", background: "none", border: 0, padding: "2px 4px", minHeight: "28px", cursor: k === akt ? "default" : "pointer",
-              color: k === akt ? "var(--color-accent-700)" : "color-mix(in srgb, var(--color-text) 70%, transparent)", fontWeight: k === akt ? 700 : 400,
-              textDecoration: k === akt ? "underline" : "none", textDecorationThickness: "2px", textUnderlineOffset: "4px" },
-            gastStil: { minWidth: "38px", minHeight: "32px", padding: "0 10px", border: 0, borderRadius: "999px", cursor: k === akt ? "default" : "pointer", font: "inherit", fontSize: "12.5px",
-              fontWeight: k === akt ? 700 : 500, letterSpacing: "0.08em", background: k === akt ? "var(--g-accent)" : "transparent", color: k === akt ? "var(--g-on-accent)" : "var(--g-ink)" },
-            kopfStil: { font: "inherit", fontSize: "11px", letterSpacing: "0.13em", background: "none", border: 0, padding: "0 3px", cursor: k === akt ? "default" : "pointer",
-              color: k === akt ? "var(--color-accent-700)" : "var(--color-text)", fontWeight: k === akt ? 700 : 400, textDecoration: k === akt ? "none" : "underline", textUnderlineOffset: "2px" },
-            klick: () => { if (k === akt) return; try { window.localStorage.setItem("chronik.sprache", k); } catch (e) { /* ohne Speicher */ } window.location.reload(); } })) };
+        const offen = self0.state.sprAuf || "";
+        const wechsel = (k) => { if (k === akt) { self0.setState({ sprAuf: "" }); return; } try { window.localStorage.setItem("chronik.sprache", k); } catch (e) { /* ohne Speicher */ } window.location.reload(); };
+        /* Ein Knopf zeigt die aktuelle Sprache; Antippen klappt alle Sprachen auf. Vier Orte, je im Stil der Seite. */
+        const menueBasis = { position: "absolute", top: "calc(100% + 6px)", right: 0, zIndex: 2200, display: "grid", gap: "2px", minWidth: "170px", padding: "6px", borderRadius: "12px",
+          textTransform: "none", letterSpacing: "normal", animationName: "tl-fade", animationDuration: "160ms", animationFillMode: "both" };
+        const v = (name, knopf, menue) => ({ wrap: Object.assign({ position: "relative", display: "inline-flex" }, name === "gast" ? { position: "absolute", top: "14px", right: "14px", zIndex: 5 } : {}, name === "menu" ? { marginLeft: "auto" } : {}),
+          auf: offen === name, aria: offen === name ? "true" : "false",
+          um: (ev) => { if (ev && ev.stopPropagation) ev.stopPropagation(); self0.setState({ sprAuf: offen === name ? "" : name }); },
+          knopf: Object.assign({ display: "inline-flex", alignItems: "center", gap: "6px", font: "inherit", cursor: "pointer", whiteSpace: "nowrap" }, knopf),
+          pfeil: { fontSize: "0.8em", opacity: 0.7, display: "inline-block", transition: "transform 160ms ease", transform: offen === name ? "rotate(180deg)" : "none" },
+          menue: Object.assign({}, menueBasis, menue) });
+        const hell = { background: "var(--color-bg)", color: "var(--color-text)", border: "1px solid var(--color-divider)", boxShadow: "0 14px 32px -14px rgba(0, 0, 0, 0.4)" };
+        return { mehr: ks.length > 1, mehrLogin: ks.length > 1 && !self0.state.gast, akt: akt, aktKurz: akt.toUpperCase(), onWahl: (ev) => wechsel(ev.target.value),
+          /* Anmeldeseite: Zeitungsstil wie die Kopfzeile. */
+          /* Am Handy steht der Knopf links unter der Kopfzeile – dann nach rechts aufklappen. */
+          login: v("login", { fontSize: "11px", letterSpacing: "0.16em", fontWeight: 700, color: "var(--color-accent-700)", background: "none", border: 0, padding: "4px 2px", minHeight: "30px" },
+            Object.assign({}, hell, ((self0.state.vw || window.innerWidth || 1280) < 760) ? { left: 0, right: "auto" } : {})),
+          /* Gästeseite: Farben, Schrift und Rundung der Gästeseite. */
+          gast: v("gast", { fontSize: "13px", fontWeight: 700, letterSpacing: "0.06em", color: "var(--g-ink)", padding: "0 12px", minHeight: "36px", borderRadius: "999px",
+              background: "color-mix(in srgb, var(--g-card, #fff) 82%, transparent)", border: "1px solid color-mix(in srgb, var(--g-ink) 16%, transparent)",
+              boxShadow: "0 4px 14px -8px rgba(0, 0, 0, 0.35)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)" },
+            { background: "var(--g-card, #fff)", color: "var(--g-ink)", border: "1px solid color-mix(in srgb, var(--g-ink) 14%, transparent)", borderRadius: "calc(var(--g-radius, 8px) + 6px)", boxShadow: "0 16px 34px -14px rgba(0, 0, 0, 0.5)" }),
+          /* App-Kopfzeile: klein, Großbuchstaben, wie „Abmelden“ daneben. */
+          kopf: v("kopf", { fontSize: "11px", letterSpacing: "0.13em", color: "var(--color-text)", background: "none", border: 0, padding: "0 2px" }, hell),
+          /* Handy-Menü: kleiner Knopf mit Rahmen. */
+          menu: v("menu", { fontSize: "14px", fontWeight: 700, letterSpacing: "0.06em", color: "var(--color-text)", padding: "0 12px", minHeight: "40px", borderRadius: "var(--radius-md, 4px)",
+              background: "var(--color-bg)", border: "1px solid var(--color-divider)" }, hell),
+          liste: ks.map((k) => {
+            const an = k === akt;
+            const zeile = { display: "flex", justifyContent: "space-between", alignItems: "center", gap: "14px", width: "100%", minHeight: "40px", padding: "0 12px", border: 0, borderRadius: "8px",
+              font: "inherit", fontSize: "14.5px", textAlign: "left", cursor: an ? "default" : "pointer", fontWeight: an ? 700 : 400 };
+            return { key: k, kurz: k.toUpperCase(), name: (S[k] || {}).name || k, aria: an ? "true" : "false", klick: () => wechsel(k),
+              login: Object.assign({}, zeile, { background: an ? "var(--color-accent-100)" : "transparent", color: "var(--color-text)" }),
+              kopf: Object.assign({}, zeile, { background: an ? "var(--color-accent-100)" : "transparent", color: "var(--color-text)" }),
+              menu: Object.assign({}, zeile, { background: an ? "var(--color-accent-100)" : "transparent", color: "var(--color-text)" }),
+              gast: Object.assign({}, zeile, { background: an ? "var(--g-accent)" : "transparent", color: an ? "var(--g-on-accent)" : "var(--g-ink)", borderRadius: "var(--g-radius, 8px)" }) };
+          }) };
       })(this),
       gv: this.gastVals(),
       _bedarf: (function (self) {
