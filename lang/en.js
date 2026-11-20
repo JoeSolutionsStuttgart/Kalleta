@@ -3788,7 +3788,7 @@ window.CHRONIK_SPRACHEN.en = {
     gf_nr: "Question {n}",
     gf_abh_ja: "depends on question {n} · only if “{a}”",
     gf_abh_nein: "depends on question {n} · only if not “{a}”",
-    gf_noch_abfragen: "Almost done: there are {n} more question(s). Answer them, then send everything together.",
+    gf_noch_abfragen: "Almost done: there are a few more questions. Answer them, then send everything together.",
     gf_pflicht_an: "On",
     gf_pflicht_aus: "Off — tap to turn on",
     vo_an: "on",
@@ -4696,6 +4696,8 @@ window.CHRONIK_SPRACHEN.en = {
     ga_k_zp_k: "Schedule with times for guests",
     ga_k_sitz_k: "Create tables, seat guests",
     ga_k_infos_k: "Countdown, directions, emergency contacts",
-    nav_editor_zu: "Stop editing? Unsaved changes will be lost."
+    nav_editor_zu: "Stop editing? Unsaved changes will be lost.",
+    gf_schritt_mehr: "Question {a} · more to come",
+    gf_schritt_letzte: "Question {a} · the last one"
   }
 };

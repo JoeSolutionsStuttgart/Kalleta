@@ -3788,7 +3788,7 @@ window.CHRONIK_SPRACHEN.de = {
     gf_nr: "Abfrage {n}",
     gf_abh_ja: "hängt an Abfrage {n} · nur bei „{a}“",
     gf_abh_nein: "hängt an Abfrage {n} · nur wenn nicht „{a}“",
-    gf_noch_abfragen: "Fast geschafft: Es gibt noch {n} Abfrage(n). Beantworte sie, dann schickst du alles zusammen ab.",
+    gf_noch_abfragen: "Fast geschafft: Es gibt noch weitere Abfragen. Beantworte sie, dann schickst du alles zusammen ab.",
     gf_pflicht_an: "Eingeschaltet",
     gf_pflicht_aus: "Ausgeschaltet — tippen zum Einschalten",
     vo_an: "an",
@@ -4696,6 +4696,8 @@ window.CHRONIK_SPRACHEN.de = {
     ga_k_zp_k: "Ablauf mit Uhrzeiten für Gäste",
     ga_k_sitz_k: "Tische anlegen, Gäste zuordnen",
     ga_k_infos_k: "Countdown, Anfahrt, Notfallkontakte",
-    nav_editor_zu: "Bearbeiten beenden? Nicht gespeicherte Änderungen gehen verloren."
+    nav_editor_zu: "Bearbeiten beenden? Nicht gespeicherte Änderungen gehen verloren.",
+    gf_schritt_mehr: "Frage {a} · es folgen noch weitere",
+    gf_schritt_letzte: "Frage {a} · die letzte"
   }
 };
