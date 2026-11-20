@@ -3751,8 +3751,8 @@ window.CHRONIK_SPRACHEN.en = {
     gf_eigene_ph: "Your own answer …",
     gf_eigene_add: "Add",
     rf_beantwortet: "Answered",
-    gf_pflicht: "Accept only with answered questions",
-    gf_pflicht_h: "After accepting, guests are guided step by step through all questions and send everything at once at the end. Declines skip the questions.",
+    gf_pflicht: "Questions right after the reply",
+    gf_pflicht_h: "After replying yes, guests are guided through the questions step by step and send everything together. Required questions must be answered, optional ones can be skipped. Declines skip the questions.",
     gf_pflicht_fehlt: "Please answer all questions first.",
     gf_pflicht_eine: "Please choose an answer first.",
     gf_schritt: "Question {a} of {n}",
@@ -4698,6 +4698,10 @@ window.CHRONIK_SPRACHEN.en = {
     ga_k_infos_k: "Countdown, directions, emergency contacts",
     nav_editor_zu: "Stop editing? Unsaved changes will be lost.",
     gf_schritt_mehr: "Question {a} · more to come",
-    gf_schritt_letzte: "Question {a} · the last one"
+    gf_schritt_letzte: "Question {a} · the last one",
+    gf_q_pflicht: "Required question",
+    gf_q_pflicht_an: "Guests must answer it",
+    gf_q_pflicht_aus: "Optional – guests can skip it",
+    gf_freiwillig: "optional"
   }
 };

@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="chronik-config.js?v=b176"></script>
-<script src="lang/de.js?v=b176"></script>
-<script src="lang/en.js?v=b176"></script>
-<script src="lang/sprache.js?v=b176"></script>
-<script src="./support.js?v=b176"></script>
+<script src="chronik-config.js?v=b177"></script>
+<script src="lang/de.js?v=b177"></script>
+<script src="lang/en.js?v=b177"></script>
+<script src="lang/sprache.js?v=b177"></script>
+<script src="./support.js?v=b177"></script>
 </head>
 <body>
 <x-dc>
@@ -20,15 +20,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kalleta">
 <link rel="stylesheet" href="broadsheet.css">
-<script src="supabase-bridge.js?v=b176"></script>
-<script src="xlsx-export.js?v=b176"></script>
-<script src="farbe.js?v=b176"></script>
-<script src="cw-plaetze.js?v=b176"></script>
-<script src="fb-knopf.js?v=b176"></script>
-<script src="rechtliches.js?v=b176"></script>
-<script src="kalleta-nutzung.js?v=b176"></script>
+<script src="supabase-bridge.js?v=b177"></script>
+<script src="xlsx-export.js?v=b177"></script>
+<script src="farbe.js?v=b177"></script>
+<script src="cw-plaetze.js?v=b177"></script>
+<script src="fb-knopf.js?v=b177"></script>
+<script src="rechtliches.js?v=b177"></script>
+<script src="kalleta-nutzung.js?v=b177"></script>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
-<link rel="stylesheet" href="fonts/fonts.css?v=b176">
+<link rel="stylesheet" href="fonts/fonts.css?v=b177">
 <style>
 :root { --color-on-accent: #141210; --color-on-accent-2: #ffffff; --color-on-text: #f3f2f2; }
 .btn-primary, .btn-primary:hover, .btn-primary:active { color: var(--color-on-accent); }
@@ -441,7 +441,7 @@
                   <div style="display: grid; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ gv.wzStand }}</span><div style="{{ gv.wzBalken }}"></div></div>
                   <sc-for list="{{ gv.wzFragen }}" as="fq" hint-placeholder-count="0">
                   <div data-gziel="{{ fq.ziel }}" style="display: grid; gap: 10px; border-radius: 14px; scroll-margin-top: 90px;">
-                    <div style="display: grid; gap: 2px;"><span style="font-family: var(--g-head); font-weight: var(--g-hw); font-size: 20px; line-height: 1.25; overflow-wrap: anywhere;">{{ fq.frage }}</span><span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ fq.art }}</span></div>
+                    <div style="display: grid; gap: 2px;"><span style="font-family: var(--g-head); font-weight: var(--g-hw); font-size: 20px; line-height: 1.25; overflow-wrap: anywhere;">{{ fq.frage }}</span><sc-if value="{{ fq.istFrei }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ L.gf_freiwillig }}</span></sc-if><span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ fq.art }}</span></div>
                     <sc-if value="{{ fq.istOffen }}" hint-placeholder-val="{{ false }}"><textarea rows="3" value="{{ fq.offenText }}" onChange="{{ fq.onOffen }}" placeholder="{{ L.gf_offen_ph }}" maxlength="300" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--g-ink) 18%, transparent); background: var(--g-bg); color: var(--g-ink); font: inherit; font-size: 16px; line-height: 1.45; resize: vertical;"></textarea></sc-if>
                     <sc-if value="{{ fq.istSpiel }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 10px;"><sc-for list="{{ fq.spielPersonen }}" as="sp" hint-placeholder-count="0"><div style="display: flex; gap: 8px 12px; align-items: center; flex-wrap: wrap; justify-content: space-between; padding: 10px 14px; border-radius: 14px; background: var(--g-bg); border: 1px solid color-mix(in srgb, var(--g-ink) 14%, transparent);"><span style="font-size: 16px; font-weight: 600; overflow-wrap: anywhere;">{{ sp.name }}</span><div style="display: flex; gap: 8px;"><button onClick="{{ sp.setJa }}" style="{{ sp.jaStil }}">✓ {{ L.gf_spiel_ja }}</button><button onClick="{{ sp.setNein }}" style="{{ sp.neinStil }}">{{ L.gf_spiel_nein }}</button></div></div></sc-for></div></sc-if>
                     <sc-if value="{{ fq.istRang }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 10px;"><sc-for list="{{ fq.rangPlaetze }}" as="rp" hint-placeholder-count="0"><div style="display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; align-items: start;"><span style="{{ rp.nrStil }}">{{ rp.nr }}</span><div style="display: grid; gap: 6px; min-width: 0;"><select value="{{ rp.wahl }}" onChange="{{ rp.onWahl }}" aria-label="{{ rp.aria }}" style="{{ rp.selStil }}"><sc-for list="{{ rp.optionen }}" as="ro" hint-placeholder-count="0"><option value="{{ ro.value }}" disabled="{{ ro.belegt }}">{{ ro.label }}</option></sc-for></select><sc-if value="{{ rp.eigenAn }}" hint-placeholder-val="{{ false }}"><input value="{{ rp.eigenText }}" onChange="{{ rp.onEigen }}" placeholder="{{ L.gf_rang_eigen_ph }}" maxlength="80" style="width: 100%; min-height: 50px; box-sizing: border-box; padding: 0 14px; border-radius: 14px; border: 2px dashed var(--g-ink); background: var(--g-bg); color: var(--g-ink); font: inherit; font-size: 16px;"></sc-if></div></div></sc-for></div></sc-if>
@@ -479,7 +479,7 @@
                 <sc-if value="{{ gv.fsHatStand }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ gv.fsStand }}</span><div style="{{ gv.fsBalken }}"></div></div></sc-if>
                 <sc-for list="{{ gv.fsFragen }}" as="fq" hint-placeholder-count="0">
                   <div data-gziel="{{ fq.ziel }}" style="display: grid; gap: 10px; border-radius: 14px; scroll-margin-top: 90px;">
-                    <div style="display: grid; gap: 2px;"><span style="font-family: var(--g-head); font-weight: var(--g-hw); font-size: 20px; line-height: 1.25; overflow-wrap: anywhere;">{{ fq.frage }}</span><span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ fq.art }}</span></div>
+                    <div style="display: grid; gap: 2px;"><span style="font-family: var(--g-head); font-weight: var(--g-hw); font-size: 20px; line-height: 1.25; overflow-wrap: anywhere;">{{ fq.frage }}</span><sc-if value="{{ fq.istFrei }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12.5px; font-style: italic; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ L.gf_freiwillig }}</span></sc-if><span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--g-ink) 62%, transparent);">{{ fq.art }}</span></div>
                     <sc-if value="{{ fq.istOffen }}" hint-placeholder-val="{{ false }}"><textarea rows="3" value="{{ fq.offenText }}" onChange="{{ fq.onOffen }}" placeholder="{{ L.gf_offen_ph }}" maxlength="300" style="width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--g-ink) 18%, transparent); background: var(--g-bg); color: var(--g-ink); font: inherit; font-size: 16px; line-height: 1.45; resize: vertical;"></textarea></sc-if>
                     <sc-if value="{{ fq.istSpiel }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 10px;"><sc-for list="{{ fq.spielPersonen }}" as="sp" hint-placeholder-count="0"><div style="display: flex; gap: 8px 12px; align-items: center; flex-wrap: wrap; justify-content: space-between; padding: 10px 14px; border-radius: 14px; background: var(--g-bg); border: 1px solid color-mix(in srgb, var(--g-ink) 14%, transparent);"><span style="font-size: 16px; font-weight: 600; overflow-wrap: anywhere;">{{ sp.name }}</span><div style="display: flex; gap: 8px;"><button onClick="{{ sp.setJa }}" style="{{ sp.jaStil }}">✓ {{ L.gf_spiel_ja }}</button><button onClick="{{ sp.setNein }}" style="{{ sp.neinStil }}">{{ L.gf_spiel_nein }}</button></div></div></sc-for></div></sc-if>
                     <sc-if value="{{ fq.istRang }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 10px;"><sc-for list="{{ fq.rangPlaetze }}" as="rp" hint-placeholder-count="0"><div style="display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 12px; align-items: start;"><span style="{{ rp.nrStil }}">{{ rp.nr }}</span><div style="display: grid; gap: 6px; min-width: 0;"><select value="{{ rp.wahl }}" onChange="{{ rp.onWahl }}" aria-label="{{ rp.aria }}" style="{{ rp.selStil }}"><sc-for list="{{ rp.optionen }}" as="ro" hint-placeholder-count="0"><option value="{{ ro.value }}" disabled="{{ ro.belegt }}">{{ ro.label }}</option></sc-for></select><sc-if value="{{ rp.eigenAn }}" hint-placeholder-val="{{ false }}"><input value="{{ rp.eigenText }}" onChange="{{ rp.onEigen }}" placeholder="{{ L.gf_rang_eigen_ph }}" maxlength="80" style="width: 100%; min-height: 50px; box-sizing: border-box; padding: 0 14px; border-radius: 14px; border: 2px dashed var(--g-ink); background: var(--g-bg); color: var(--g-ink); font: inherit; font-size: 16px;"></sc-if></div></div></sc-for></div></sc-if>
@@ -634,7 +634,7 @@
     <sc-if value="{{ lay.loginKlein }}" hint-placeholder-val="{{ false }}">
     <div data-bewegt="" style="order: 0; min-width: 0; position: relative; z-index: 1;">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b176" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b177" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -647,7 +647,7 @@
     <div data-bewegt="" style="{{ lay.loginPitch }}">
       <sc-if value="{{ lay.loginGross }}" hint-placeholder-val="{{ true }}">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b176" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b177" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -3395,6 +3395,7 @@
                       <div style="{{ gq.block }}">
                         <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;"><sc-if value="{{ gq.istAbh }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="{{ gq.abhStil }}">↳</span></sc-if><span style="{{ gq.nrStil }}">{{ gq.nummer }}</span><sc-if value="{{ gq.istAbh }}" hint-placeholder-val="{{ false }}"><span style="{{ gq.abhStil }}">{{ gq.abhText }}</span></sc-if></div>
                         <div style="display: flex; gap: 8px; align-items: center;"><textarea class="input" rows="{{ gq.frageZeilen }}" value="{{ gq.frage }}" onChange="{{ gq.onFrage }}" placeholder="{{ L.gf_frage_ph }}" style="flex: 1 1 200px; min-width: 0; font-size: 16px; resize: none; overflow: hidden; field-sizing: content; min-height: 44px; line-height: 1.4;"></textarea><button class="btn btn-ghost btn-icon" title="{{ L.entfernen }}" aria-label="{{ L.entfernen }}" style="min-height: 40px; color: var(--color-accent-2-700);" onClick="{{ gq.weg }}">✕</button></div>
+                        <label style="{{ gq.pflichtStil }}"><input type="checkbox" checked="{{ gq.pflichtAn }}" onChange="{{ gq.pflichtUm }}" style="width: 20px; height: 20px; margin: 0; accent-color: var(--color-accent);"><span style="display: grid; gap: 1px;"><span>{{ L.gf_q_pflicht }}</span><span style="font-size: 12px; font-weight: 400; color: var(--color-neutral-700);">{{ gq.pflichtText }}</span></span></label>
                         <div style="display: flex; gap: 6px; flex-wrap: wrap;"><sc-for list="{{ gq.formChips }}" as="qf" hint-placeholder-count="0"><button onClick="{{ qf.klick }}" style="{{ qf.stil }}">{{ qf.label }}</button></sc-for></div>
                         <div style="font-size: 12.5px; line-height: 1.45; color: var(--color-neutral-700);">{{ gq.formHinweis }}</div>
                         <sc-if value="{{ gq.istSpielQ }}" hint-placeholder-val="{{ false }}"><div style="display: grid; gap: 4px;"><button onClick="{{ gq.geheimUm }}" style="{{ gq.geheimStil }}">{{ gq.geheimLabel }}</button><span style="font-size: 12.5px; line-height: 1.45; color: var(--color-neutral-700);">{{ L.gf_geheim_h }}</span></div></sc-if>
@@ -8628,9 +8629,15 @@ class Component extends DCLogic {
           antwNeu: () => { const t = String(q.antworten || ""); const l = /\n/.test(t) || !t.trim() ? t.split("\n") : antwListe(t).map((x) => x.trim()); setQ({ antworten: l.concat([""]).join("\n") }); },
           frageZeilen: String(Math.max(1, Math.min(6, Math.ceil(String(q.frage || "").length / 46)))),
           artChips: [[false, tx("gf_eine")], [true, tx("gf_mehr")]].map((x) => ({ key: x[0] ? "m" : "e", label: (!!q.mehr === x[0] ? "✓ " : "") + x[1], stil: this.voPill(!!q.mehr === x[0]), klick: () => setQ({ mehr: x[0] }) })),
+          pflichtAn: q.pflicht !== false,
+          pflichtUm: (ev) => setQ({ pflicht: !!(ev && ev.target ? ev.target.checked : q.pflicht === false) }),
+          pflichtStil: { display: "flex", alignItems: "center", gap: "10px", padding: "8px 12px", borderRadius: "10px", cursor: "pointer", fontSize: "14px", fontWeight: 600, justifySelf: "start",
+            border: "1px solid " + (q.pflicht !== false ? "var(--color-accent)" : "var(--color-divider)"),
+            background: q.pflicht !== false ? "var(--color-accent-100)" : "var(--color-bg)" },
+          pflichtText: q.pflicht !== false ? tx("gf_q_pflicht_an") : tx("gf_q_pflicht_aus"),
           weg: () => this.voSet("offen.fragen", (o.fragen || []).filter((x, j) => j !== k)) };
       }),
-      gFrageNeu: () => this.voSet("offen.fragen", (o.fragen || []).concat([{ i: "q" + Math.random().toString(36).slice(2, 8), frage: "", antworten: "", mehr: true, _pflicht: !!o.fragenPflicht }])),
+      gFrageNeu: () => this.voSet("offen.fragen", (o.fragen || []).concat([{ i: "q" + Math.random().toString(36).slice(2, 8), frage: "", antworten: "", mehr: true, pflicht: true }])),
       /* Die Pflicht steht auch an jeder Abfrage — so kommt sie ohne Datenbank-Update auf der Gästeseite an. */
       gfPflichtLabel: (o.fragenPflicht ? "✓ " : "") + tx("gf_pflicht"),
       gfPflichtAria: o.fragenPflicht ? "true" : "false",
@@ -8919,7 +8926,7 @@ class Component extends DCLogic {
       if (this.gfPflicht(c)) {
         const pers = this.gfPersonen(r);
         this.gfSichtbar(this.gfNorm(c.fragen), r.antw).forEach((f) => {
-          if (!this.gfKomplett(f, r, pers)) out.push({ ziel: "f-" + f.i, text: (f.form === "spiel" ? tx("gf_fehlt_spiel") : f.form === "rang" ? tx("gf_fehlt_rang") : tx("gf_fehlt_frage")).replace("{f}", f.frage) });
+          if (f.pflicht && !this.gfKomplett(f, r, pers)) out.push({ ziel: "f-" + f.i, text: (f.form === "spiel" ? tx("gf_fehlt_spiel") : f.form === "rang" ? tx("gf_fehlt_rang") : tx("gf_fehlt_frage")).replace("{f}", f.frage) });
         });
       }
     }
@@ -9015,6 +9022,8 @@ class Component extends DCLogic {
       plaetze: Math.max(1, Math.min(20, parseInt(q && q.plaetze, 10) || 3)),
       rangEigen: !!(q && q.rangEigen),
       geheim: !!(q && q.geheim) && q.form === "spiel",
+      /* Pflichtfrage? Standard ja – nur ein ausdrückliches „nein“ macht sie freiwillig. */
+      pflicht: !(q && q.pflicht === false),
       /* Abhängigkeit: "qid|Antwort" = nur zeigen, wenn …; "!qid|Antwort" = nur, wenn nicht … */
       wenn: (function () { const w = String((q && q.wenn) || ""); const m = /^(!?)([^|]{1,20})\|(.{1,80})$/.exec(w); return m ? { nicht: !!m[1], q: m[2], a: m[3] } : null; })()
     })).filter((q) => q.frage && (q.opts.length || q.form === "offen" || q.form === "spiel" || (q.form === "rang" && q.rangEigen)));
@@ -10364,6 +10373,11 @@ class Component extends DCLogic {
     const antw = {};
     this.gfSichtbar(this.gfNorm(((g.d || {}).cfg || {}).fragen), r.antw).forEach((f) => { const l = this.gfAntw(f, r, this.gfPersonen(r)); if (l.length) antw[f.i] = l; });
     if (!Object.keys(antw).length) { const f0 = this.gfSichtbar(this.gfNorm(((g.d || {}).cfg || {}).fragen), r.antw)[0]; this.gastFehler(tx("gf_keine_wahl"), f0 ? "f-" + f0.i : "", { fs: 0 }); return; }
+    /* Pflichtfragen müssen beantwortet sein – freiwillige dürfen leer bleiben. */
+    const sichtF = this.gfSichtbar(this.gfNorm(((g.d || {}).cfg || {}).fragen), r.antw);
+    const persF = this.gfPersonen(r);
+    const offenF = sichtF.findIndex((f) => f.pflicht && !this.gfKomplett(f, r, persF));
+    if (offenF >= 0) { const f = sichtF[offenF]; this.gastFehler((f.form === "spiel" ? tx("gf_fehlt_spiel") : f.form === "rang" ? tx("gf_fehlt_rang") : tx("gf_fehlt_frage")).replace("{f}", f.frage), "f-" + f.i, { fs: offenF }); return; }
     this.gastSet({ busy: tx("gast_sendet"), info: "" });
     try {
       const gh = await this.gastGeheimPw(antw);
@@ -10394,7 +10408,7 @@ class Component extends DCLogic {
     sichtbarR.forEach((f) => { const l = this.gfAntw(f, r, persR); if (l.length) antw[f.i] = l; });
     /* Pflicht: Zusage erst, wenn jede geltende Abfrage beantwortet ist. */
     if (ja && this.gfPflicht(cfgR)) {
-      const fehlt = sichtbarR.findIndex((f) => !antw[f.i] || (f.form === "spiel" && antw[f.i].length < persR.length) || (f.form === "rang" && !this.gfKomplett(f, r)));
+      const fehlt = sichtbarR.findIndex((f) => f.pflicht && (!antw[f.i] || (f.form === "spiel" && antw[f.i].length < persR.length) || (f.form === "rang" && !this.gfKomplett(f, r))));
       if (fehlt >= 0) {
         const f = sichtbarR[fehlt];
         this.gastFehler((f.form === "spiel" ? tx("gf_fehlt_spiel") : f.form === "rang" ? tx("gf_fehlt_rang") : tx("gf_fehlt_frage")).replace("{f}", f.frage), "f-" + f.i, { wz: fehlt + 1 });
@@ -10442,7 +10456,7 @@ class Component extends DCLogic {
     const frage = s >= 1 && s <= n ? v.fragen[s - 1] : null;
     const nf = this.gfSichtbar(this.gfNorm(c.fragen), r.antw);
     const pers = this.gfPersonen(r);
-    const beantwortet = frage ? this.gfKomplett(nf[s - 1], r, pers) : true;
+    const beantwortet = frage ? (!(nf[s - 1] || {}).pflicht || this.gfKomplett(nf[s - 1], r, pers)) : true;
     const knopf = (an) => ({ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", minHeight: "50px", padding: "0 24px", borderRadius: "999px", border: 0, background: "var(--g-accent)", color: "var(--g-on-accent)", font: "inherit", fontSize: "16px", fontWeight: 600, cursor: an ? "pointer" : "not-allowed", opacity: an ? 1 : 0.4 });
     return Object.assign(v, {
       wzStart: s === 0, wzFrageAn: !!frage, wzEnde: wzAn && s === n + 1,
@@ -10478,7 +10492,10 @@ class Component extends DCLogic {
           fsStand: tx(fs + 1 < fn ? "gf_schritt_mehr" : "gf_schritt_letzte").replace("{a}", String(fs + 1)),
           fsBalken: { display: "none" },
           fsHatZurueck: fs > 0, fsZurueck: gehF(Math.max(0, fs - 1)),
-          fsZeigWeiter: mehr && fs < fn, fsWeiter: gehF(fs + 1),
+          fsZeigWeiter: mehr && fs < fn,
+          fsWeiter: (nfA[fs] && nfA[fs].pflicht && !this.gfKomplett(nfA[fs], r, this.gfPersonen(r)))
+            ? () => this.gastFehler((nfA[fs].form === "spiel" ? tx("gf_fehlt_spiel") : nfA[fs].form === "rang" ? tx("gf_fehlt_rang") : tx("gf_fehlt_frage")).replace("{f}", nfA[fs].frage), "f-" + nfA[fs].i)
+            : gehF(fs + 1),
           fsZeigSenden: !mehr || fs >= fn,
           fsEnde: mehr && fs >= fn,
           fsUebersicht: mehr ? nfA.map((f, k) => ({ key: f.i, frage: f.frage, text: this.gfText(f, r), aendern: gehF(k) })) : []
@@ -10703,7 +10720,7 @@ class Component extends DCLogic {
           a0[f.i] = f.mehr ? (cur.indexOf(t) >= 0 ? cur : cur.concat([t])) : [t];
           return { rsvp: Object.assign({}, g2.rsvp, { antw: a0, eigen: Object.assign({}, (g2.rsvp || {}).eigen, { [f.i]: "" }) }) };
         });
-        return { key: f.i, frage: f.frage, ziel: "f-" + f.i,
+        return { key: f.i, frage: f.frage, ziel: "f-" + f.i, istFrei: !f.pflicht,
         art: f.form === "rang" ? tx("gf_art_rang").replace("{n}", String(f.plaetze)) : f.form === "spiel" ? tx("gf_art_spiel") : f.form === "offen" ? tx("gf_art_offen") : (f.mehr ? tx("gf_mehr_moeglich") : tx("gf_eine_waehlen")) + (f.form === "erweiterbar" ? " · " + tx("gf_art_erw") : ""),
         istOffen: f.form === "offen", istErw: f.form === "erweiterbar", istSpiel: f.form === "spiel", istRang: f.form === "rang",
         rangPlaetze: f.form !== "rang" ? [] : Array.from({ length: f.plaetze }, (_, k) => {

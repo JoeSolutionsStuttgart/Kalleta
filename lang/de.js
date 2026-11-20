@@ -3751,8 +3751,8 @@ window.CHRONIK_SPRACHEN.de = {
     gf_eigene_ph: "Eigene Antwort …",
     gf_eigene_add: "Hinzufügen",
     rf_beantwortet: "Beantwortet",
-    gf_pflicht: "Zusage nur mit beantworteten Abfragen",
-    gf_pflicht_h: "Gäste werden nach der Zusage Schritt für Schritt durch alle Abfragen geführt und schicken am Ende alles zusammen ab. Absagen gehen ohne Abfragen.",
+    gf_pflicht: "Abfragen direkt nach der Zusage",
+    gf_pflicht_h: "Gäste werden nach der Zusage Schritt für Schritt durch die Abfragen geführt und schicken am Ende alles zusammen ab. Pflichtfragen müssen sie beantworten, freiwillige können sie überspringen. Absagen gehen ohne Abfragen.",
     gf_pflicht_fehlt: "Bitte beantworte zuerst alle Abfragen.",
     gf_pflicht_eine: "Bitte wähle zuerst eine Antwort.",
     gf_schritt: "Frage {a} von {n}",
@@ -4698,6 +4698,10 @@ window.CHRONIK_SPRACHEN.de = {
     ga_k_infos_k: "Countdown, Anfahrt, Notfallkontakte",
     nav_editor_zu: "Bearbeiten beenden? Nicht gespeicherte Änderungen gehen verloren.",
     gf_schritt_mehr: "Frage {a} · es folgen noch weitere",
-    gf_schritt_letzte: "Frage {a} · die letzte"
+    gf_schritt_letzte: "Frage {a} · die letzte",
+    gf_q_pflicht: "Pflichtfrage",
+    gf_q_pflicht_an: "Gäste müssen sie beantworten",
+    gf_q_pflicht_aus: "Freiwillig – Gäste können sie überspringen",
+    gf_freiwillig: "freiwillig"
   }
 };
