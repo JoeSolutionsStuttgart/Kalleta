@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="chronik-config.js?v=b174"></script>
-<script src="lang/de.js?v=b174"></script>
-<script src="lang/en.js?v=b174"></script>
-<script src="lang/sprache.js?v=b174"></script>
-<script src="./support.js?v=b174"></script>
+<script src="chronik-config.js?v=b175"></script>
+<script src="lang/de.js?v=b175"></script>
+<script src="lang/en.js?v=b175"></script>
+<script src="lang/sprache.js?v=b175"></script>
+<script src="./support.js?v=b175"></script>
 </head>
 <body>
 <x-dc>
@@ -20,15 +20,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Kalleta">
 <link rel="stylesheet" href="broadsheet.css">
-<script src="supabase-bridge.js?v=b174"></script>
-<script src="xlsx-export.js?v=b174"></script>
-<script src="farbe.js?v=b174"></script>
-<script src="cw-plaetze.js?v=b174"></script>
-<script src="fb-knopf.js?v=b174"></script>
-<script src="rechtliches.js?v=b174"></script>
-<script src="kalleta-nutzung.js?v=b174"></script>
+<script src="supabase-bridge.js?v=b175"></script>
+<script src="xlsx-export.js?v=b175"></script>
+<script src="farbe.js?v=b175"></script>
+<script src="cw-plaetze.js?v=b175"></script>
+<script src="fb-knopf.js?v=b175"></script>
+<script src="rechtliches.js?v=b175"></script>
+<script src="kalleta-nutzung.js?v=b175"></script>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
-<link rel="stylesheet" href="fonts/fonts.css?v=b174">
+<link rel="stylesheet" href="fonts/fonts.css?v=b175">
 <style>
 :root { --color-on-accent: #141210; --color-on-accent-2: #ffffff; --color-on-text: #f3f2f2; }
 .btn-primary, .btn-primary:hover, .btn-primary:active { color: var(--color-on-accent); }
@@ -634,7 +634,7 @@
     <sc-if value="{{ lay.loginKlein }}" hint-placeholder-val="{{ false }}">
     <div data-bewegt="" style="order: 0; min-width: 0; position: relative; z-index: 1;">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b174" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b175" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -647,7 +647,7 @@
     <div data-bewegt="" style="{{ lay.loginPitch }}">
       <sc-if value="{{ lay.loginGross }}" hint-placeholder-val="{{ true }}">
       <div style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-700);">{{ L.was_ihr_erlebt_habt_in_einer }}</div>
-      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b174" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
+      <h1 aria-label="{{ L.chronik }}" style="{{ lay.loginTitle }}"><sc-if value="{{ wortMitC }}" hint-placeholder-val="{{ true }}"><svg viewBox="96 80 310 352" aria-hidden="true" style="{{ lay.loginC }}"><defs><linearGradient id="wmC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4ad8"></stop><stop offset="0.42" stop-color="#3d63d9"></stop><stop offset="0.62" stop-color="#1f84cf"></stop><stop offset="0.82" stop-color="#10a0a8"></stop><stop offset="1" stop-color="#13a77c"></stop></linearGradient><linearGradient id="wmS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.3"></stop><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#0a0a28" stop-opacity="0.22"></stop></linearGradient><radialGradient id="wmP" cx="0.35" cy="0.3" r="0.75"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.7" stop-color="#f1f1f8"></stop><stop offset="1" stop-color="#d4d4e2"></stop></radialGradient><radialGradient id="wmK" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#a77bf0"></stop><stop offset="1" stop-color="#5d38c4"></stop></radialGradient></defs><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmC)" stroke-width="46" stroke-linecap="round"></path><path d="M 368.4 145.8 A 147 147 0 1 0 368.4 364.2" fill="none" stroke="url(#wmS)" stroke-width="46" stroke-linecap="round"></path><path d="M 148.8 325 A 140 140 0 0 1 240.9 118.1" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="7" stroke-linecap="round"></path><circle cx="160.8" cy="156.6" r="10.5" fill="url(#wmP)"></circle><circle cx="152.6" cy="343.5" r="10.5" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="33" fill="url(#wmP)"></circle><circle cx="368.4" cy="145.8" r="27" fill="none" stroke="#7446d6" stroke-width="8"></circle><circle cx="368.4" cy="145.8" r="14" fill="url(#wmK)"></circle></svg><span style="{{ lay.loginWort }}">{{ wortRest }}</span></sc-if><sc-if value="{{ wortOhneC }}" hint-placeholder-val="{{ false }}"><img src="logo.svg?v=b175" alt="" aria-hidden="true" style="{{ lay.loginLogo }}"><span style="{{ lay.loginWort }}">{{ wortGanz }}</span></sc-if><sc-if value="{{ wortBild }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ L.chronik }}" style="{{ wortBildStil }}"></span></sc-if></h1>
       <div style="height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7c4ad8, #3d63d9 40%, #1f84cf 65%, #13a77c); margin-top: var(--space-5);"></div>
       <div style="display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase;">
         <span>{{ L.ereignisse_bilder_menschen }}</span>
@@ -6942,6 +6942,7 @@ class Component extends DCLogic {
     window.addEventListener("message", this.lpNachricht);
     window.addEventListener("hashchange", this.gastStart);
     window.addEventListener("popstate", this.gastStart);
+    window.addEventListener("popstate", this.navPop);
     this.gastStart();
     this._voTimer = window.setInterval(() => this.voTick(), 5000);
     window.addEventListener("pointerdown", this.audioFreischalten, true);
@@ -8824,9 +8825,66 @@ class Component extends DCLogic {
   }
 
   /* ---- Gastansicht (ohne Anmeldung) ---- */
+  /* ---- Browser-„Zurück“: jede Ansicht bekommt einen Eintrag im Verlauf ---- */
+  ansichtVon(st) {
+    const g = st.gast;
+    return {
+      g: g ? g.ev + "|" + (g.tab || "") : "", ses: !!st.session, auth: st.session ? "" : String(st.authMode || ""),
+      voll: st.openVoll ? String(st.openId || "") : "", dr: !!st.drawer, ad: !!st.admin, ko: !!st.konto, es: String(st.einstSeite || ""),
+      sh: !!(st.show && st.show.open), vg: !!st.vgl, kt: String(st.kontaktSicht || ""), fo: !!st.filterOffen,
+      fin: st.fin ? String(st.fin.evId || "1") : "", ed: !!st.draft,
+      /* Nur eine Karte im Zeitstrahl anwählen ist kein eigener Schritt. */
+      open: String(st.openId || "")
+    };
+  }
+  navSync() {
+    if (this.state.booting) return;
+    const a = this.ansichtVon(this.state);
+    const k = JSON.stringify(a);
+    if (k === this._navK) return;
+    const vor = this._navA;
+    this._navK = k; this._navA = a;
+    const nurKlein = !!vor && Object.keys(a).every((x) => x === "open" || a[x] === vor[x]);
+    /* Ersetzen statt neuer Eintrag: beim ersten Mal, nach „Zurück“, bei An-/Abmelden und beim Betreten oder
+       Verlassen der Gästeseite (dort legt der Link selbst schon einen Eintrag an). */
+    const ersetzen = !vor || nurKlein || !!this._navZurueck || Date.now() < (this._navStill || 0) || vor.ses !== a.ses || vor.g.split("|")[0] !== a.g.split("|")[0];
+    try { if (ersetzen) window.history.replaceState({ kal: a }, ""); else window.history.pushState({ kal: a }, ""); } catch (e) { /* alte Browser */ }
+  }
+  navPop = (ev) => {
+    const a = ev && ev.state && ev.state.kal;
+    if (!a) return;
+    const st = this.state;
+    /* Den Editor nicht ungefragt schließen – sonst wären Änderungen weg. */
+    if (!a.ed && st.draft && !window.confirm(tx("nav_editor_zu"))) {
+      try { window.history.pushState({ kal: this._navA || this.ansichtVon(st) }, ""); } catch (e) { /* alte Browser */ }
+      return;
+    }
+    this._navZurueck = true;
+    const neu = {};
+    if (st.gast && a.g && a.g.split("|")[0] === st.gast.ev) neu.gast = Object.assign({}, st.gast, { tab: a.g.split("|")[1] || "" });
+    if (!st.session && (a.auth === "login" || a.auth === "register") && a.auth !== st.authMode) Object.assign(neu, { authMode: a.auth, authError: "", authNotice: "" });
+    if (st.session) {
+      Object.assign(neu, { drawer: !!a.dr, admin: !!a.ad, konto: !!a.ko, einstSeite: a.es || "", vgl: !!a.vg, filterOffen: !!a.fo });
+      if (a.voll) Object.assign(neu, { openId: a.voll, openVoll: true }); else if (st.openVoll) neu.openVoll = false;
+      if (!a.fin && st.fin) neu.fin = null;
+      if (!a.ed && st.draft) Object.assign(neu, { draft: null, lehr: null, bildSel: [] });
+    }
+    this.setState(neu, () => {
+      this._navZurueck = false;
+      if (!st.session) return;
+      /* Diese beiden schließen mit kurzer Verzögerung – solange keinen neuen Eintrag anlegen. */
+      if (!a.sh && this.state.show && this.state.show.open) { this._navStill = Date.now() + 1200; this.closeShow(); }
+      if (!a.kt && this.state.kontaktSicht) { this._navStill = Date.now() + 600; this.kontaktTimeline(""); }
+    });
+  };
   gastStart = () => {
     const m = String(location.hash || "").match(/gast=([0-9a-f-]{36})\.([A-Za-z0-9_-]{16,64})/i);
     if (!m) { if (this.state.gast) this.setState({ gast: null }); return; }
+    /* Wieder auf der Gästeseite (z. B. per „Zurück“): kein Rücksprung nach dem Anmelden mehr offen. */
+    try { localStorage.removeItem("chronik-gast-ret"); } catch (x) { /* privat */ }
+    /* Dieselbe Gästeseite ist schon offen (z. B. „Zurück“ zwischen ihren Bereichen): nicht neu laden. */
+    const g0 = this.state.gast;
+    if (g0 && g0.ev === m[1] && g0.tk0 === m[2]) return;
     let pw0 = "";
     try { pw0 = sessionStorage.getItem("chronik-gast-pw-" + m[1]) || ""; } catch (x) { /* privat */ }
     let name = "", fertig = false, fFertig = false;
@@ -10475,8 +10533,10 @@ class Component extends DCLogic {
       kontoText: tx("gast_angemeldet_als") + " " + (kontoName || ""),
       kannAnmelden: !kontoName && !!(CC && CC.enabled),
       anmelden: () => {
-        try { localStorage.setItem("chronik-gast-ret", location.hash); } catch (x) { /* privat */ }
-        try { history.replaceState(null, "", location.pathname + location.search); } catch (x) { location.hash = ""; }
+        const ret0 = location.hash;
+        /* Neuer Verlaufseintrag: „Zurück“ im Browser führt wieder auf die Gästeseite. */
+        try { history.pushState(null, "", location.pathname + location.search); } catch (x) { location.hash = ""; }
+        try { localStorage.setItem("chronik-gast-ret", ret0); } catch (x) { /* privat */ }
         this.setState({ gast: null });
       },
       tabs: tabs.map((t) => ({ key: t.k, label: t.l, g: t.g, d: this.gastSperre(d, t.k) ? "◷ " + this.gastSperre(d, t.k) : t.d, klick: () => this.gastSet({ tab: t.k, info: "" }),
@@ -12308,6 +12368,7 @@ class Component extends DCLogic {
   componentDidUpdate(vp, vs) {
     /* Anonyme Statistik (nur mit Zustimmung): welche Bereiche geöffnet werden. */
     try { if (window.KalletaNutzung) window.KalletaNutzung.zustand(vs, this.state); } catch (e) { /* egal */ }
+    this.navSync();
     /* Analyseseite: nur für E-Mail-Adressen, die in Supabase freigeschaltet sind. */
     const uidA = this.state.cloud && this.state.session ? this.state.session.userId : "";
     if (uidA !== (this._analyseFuer || "")) {
@@ -12400,6 +12461,7 @@ class Component extends DCLogic {
     window.removeEventListener("message", this.lpNachricht);
     window.removeEventListener("hashchange", this.gastStart);
     window.removeEventListener("popstate", this.gastStart);
+    window.removeEventListener("popstate", this.navPop);
     if (this._voTimer) window.clearInterval(this._voTimer);
   }
 

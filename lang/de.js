@@ -4695,6 +4695,7 @@ window.CHRONIK_SPRACHEN.de = {
     ga_k_rsvp_k: "Zu-/Absage, Begleitung, Essen, Fragen",
     ga_k_zp_k: "Ablauf mit Uhrzeiten für Gäste",
     ga_k_sitz_k: "Tische anlegen, Gäste zuordnen",
-    ga_k_infos_k: "Countdown, Anfahrt, Notfallkontakte"
+    ga_k_infos_k: "Countdown, Anfahrt, Notfallkontakte",
+    nav_editor_zu: "Bearbeiten beenden? Nicht gespeicherte Änderungen gehen verloren."
   }
 };

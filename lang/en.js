@@ -4695,6 +4695,7 @@ window.CHRONIK_SPRACHEN.en = {
     ga_k_rsvp_k: "Yes/no, plus-ones, food, questions",
     ga_k_zp_k: "Schedule with times for guests",
     ga_k_sitz_k: "Create tables, seat guests",
-    ga_k_infos_k: "Countdown, directions, emergency contacts"
+    ga_k_infos_k: "Countdown, directions, emergency contacts",
+    nav_editor_zu: "Stop editing? Unsaved changes will be lost."
   }
 };
